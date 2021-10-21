@@ -9,5 +9,5 @@ Sistema para auxiliar a encontrar receitas baseadas nos ingredientes que a pesso
 
 #### Tecnologias:
 * **Back-end**: Django
-* **Front-end**: React
+* **Front-end**: Vue.js
 * **DataBase**: PostgreSQL
