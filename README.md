@@ -58,6 +58,7 @@ Histórias: 0, 1, 2, 3 e 4.
     5. Inicializar o projeto django (Breno)
     6. Integrar elasticsearch com o django (Breno / Luiz)
     7. Criar regras no repositório para seguir o SCM definido. (Breno / Rafael)
+    8. Obter dados
 1. Como usuário, quero buscar receitas por nome.
     1. Adicionar receitas no elasticsearch (Luiz)
     2. Criar página inicial com um componente contendo duas abas. (Rafael)
