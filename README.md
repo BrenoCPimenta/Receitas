@@ -2,28 +2,34 @@
 Sistema para auxiliar a encontrar receitas baseadas nos ingredientes que a pessoa já tem em casa.
 
 #### Time:
-* Breno de Castro Pimenta
-* Luiz Felipe Nery 
-* Pedro Fonseca Wildemberg
-* Rafael Gonçalves de Oliveira
+* Back-end:
+    * Breno de Castro Pimenta
+    * Luiz Felipe Nery 
+* Front-end:
+    * Pedro Fonseca Wildemberg
+    * Rafael Gonçalves de Oliveira
 
 #### Tecnologias:
 * **Back-end**: Django
 * **Front-end**: Vue.js
 * **DataBase**: PostgreSQL
 
+
 ---
+### SCM (Sistema de controle de versão)
+A main só recebe merge das branchs de sprint.<br>
+As brachs de sprint só recebem branchs de strories.<br>
+As branchs de stories só recebem merge das branchs de task.<br>
+As branchs de task que realmente possuem os commits. <br>
 
+E os merges serão através de PullRequests.<br>
+E as branchs serão divididas entre Front e Back como são aplicações independentes.
 
+*Exemplo:*
+- back/task-01 -> back/story-01 -> back/sprint_01
+- ao terminar a sprint: back/sprint_01 -> master
 
-
-## Papéis
-
-* Breno:  Back-end
-* Luiz:  Back-end
-* Pedro: Front-end
-* Rafael: Front-end
-
+---
 
 ## Backlog
 
