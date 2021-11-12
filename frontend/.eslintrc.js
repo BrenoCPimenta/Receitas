@@ -13,7 +13,7 @@ module.exports = {
     'vue/component-name-in-template-casing': [`error`,
       `PascalCase`,
     ],
-    'vue/no-v-html': false,
+    'vue/no-v-html': 0,
     'vue/html-closing-bracket-spacing': [`error`, {
       startTag: `never`,
       endTag: `never`,
@@ -21,9 +21,10 @@ module.exports = {
     }],
   },
   parserOptions: {
-    parser: `babel-eslint`,
+    parser: `@babel/eslint-parser`,
   },
   plugins: [
     `cypress`,
+    `@babel`,
   ],
 };

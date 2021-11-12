@@ -11,7 +11,7 @@
       data-qa="first page link"
       @click.native="$emit(`turn-to-page`, 1)"
     >
-      <<
+      &lt;&lt;
     </Component>
     <Component
       :is="currentPage > 1 ? `router-link` : `span`"
@@ -24,7 +24,7 @@
       data-qa="previous page link"
       @click.native="$emit(`turn-to-page`, previousPage)"
     >
-      <
+      &lt;
     </Component>
     <div :class="$style.status">
       {{ currentPage }}
@@ -42,7 +42,7 @@
       data-qa="next page link"
       @click.native="$emit(`turn-to-page`, nextPage)"
     >
-      >
+      &gt;
     </Component>
     <Component
       :is="currentPage < pageCount ? `router-link` : `span`"
@@ -55,7 +55,7 @@
       data-qa="last page link"
       @click.native="$emit(`turn-to-page`, pageCount)"
     >
-      >>
+      &gt;&gt;
     </Component>
   </div>
 </template>

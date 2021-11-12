@@ -13,7 +13,7 @@ import TheFooter from '../components/TheFooter.vue';
 export default {
   name: `LayoutDefault`,
   components: {
-    TheFooter
+    TheFooter,
   },
 };
 </script>
@@ -32,4 +32,3 @@ export default {
   padding-bottom: 2em;
 }
 </style>
-
