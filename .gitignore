@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#elastic folder
+elastic/*
+!elastic/README.md
