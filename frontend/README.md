@@ -3,6 +3,7 @@
 ## Project setup
 ```
 npm install
+git config --local core.hooksPath .githooks/
 ```
 
 ### Compiles and hot-reloads for development

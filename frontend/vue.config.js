@@ -19,4 +19,8 @@ if (integrationTestMode) {
 module.exports = {
   pages,
   lintOnSave: false,
+
+  transpileDependencies: [
+    `vuetify`,
+  ],
 };

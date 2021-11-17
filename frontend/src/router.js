@@ -9,8 +9,19 @@ export default new Router({
   routes: [
     {
       path: `/`,
+      alias: `/home`,
       name: `home`,
       component: () => import(`./pages/PageHome.vue`),
+      children: [
+        {
+          path: `/`,
+          component: () => import(`./components/TextFilter.vue`),
+        },
+        {
+          path: `/ingredientes`,
+          component: () => import(`./components/IngredientFilter.vue`),
+        },
+      ],
     },
   ],
 });
