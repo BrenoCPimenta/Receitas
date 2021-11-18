@@ -1,7 +1,9 @@
 <template>
-  <LayoutDefault>
-    <RouterView/>
-  </LayoutDefault>
+  <v-app>
+    <LayoutDefault>
+      <RouterView/>
+    </LayoutDefault>
+  </v-app>
 </template>
 
 <script>

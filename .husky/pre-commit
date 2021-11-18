@@ -1,7 +1,0 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-if [[ $(git symbolic-ref HEAD) == *"front/"* ]]; then
-  cd frontend
-  npm run pre-commit
-fi

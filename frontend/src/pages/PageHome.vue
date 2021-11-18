@@ -1,10 +1,37 @@
 <template>
-  <div :class="$style.wrap">
+  <div
+    id="home-root"
+    :class="$style.wrap"
+  >
     <div :class="$style.intro">
+      <v-icon
+        x-large
+        color="blue lighten-3"
+      >
+        mdi-silverware-variant
+      </v-icon>
       <h1 :class="$style.headline">
-        Home
+        Receitas
       </h1>
     </div>
+    <v-tabs
+      v-model="currentTab"
+      grow
+      centered
+      icons-and-text
+    >
+      <v-tabs-slider/>
+      <v-tab
+        v-for="tab in tabs"
+        :key="tab.route"
+        :to="tab.route"
+      >
+        <p>{{ tab.text }}</p>
+        <v-icon>{{ tab.iconName }}</v-icon>
+      </v-tab>
+    </v-tabs>
+
+    <RouterView/>
 
     <div :class="$style.listing">
       <ProductListingContainer/>
@@ -20,10 +47,29 @@ export default {
   components: {
     ProductListingContainer,
   },
+  data: () => ({
+    currentTab: null,
+  }),
+  created() {
+    this.tabs = [
+      {
+        text: `Busca Textual`,
+        route: `/`,
+        iconName: `mdi-magnify`,
+      },
+      {
+        text: `Busca por Ingredientes`,
+        route: `/ingredientes?text=novo`,
+        iconName: `mdi-format-list-checks`,
+      },
+    ];
+  },
 };
 </script>
 
 <style lang="scss" module>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
+
 .intro {
   max-width: 32em;
   margin-right: auto;
@@ -36,6 +82,7 @@ export default {
   margin-bottom: 0.5em;
   font-size: 1.75em;
   line-height: 1.2;
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 
 .listing,
