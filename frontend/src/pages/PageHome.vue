@@ -3,7 +3,7 @@
     id="home-root"
     :class="$style.wrap"
   >
-    <div :class="$style.intro">
+    <!-- <div :class="$style.intro">
       <v-icon
         x-large
         color="blue lighten-3"
@@ -13,12 +13,26 @@
       <h1 :class="$style.headline">
         Receitas
       </h1>
+    </div> -->
+
+    <div :class="$style.intro">
+       <v-container>
+        <v-row align="center" justify="center">
+          <v-img
+          src="../assets/receitinhas3.png"
+          max-width="40em"
+          
+          ></v-img>
+        </v-row>
+      </v-container>
     </div>
+
     <v-tabs
       v-model="currentTab"
       grow
       centered
       icons-and-text
+      color=mycolor
     >
       <v-tabs-slider/>
       <v-tab
