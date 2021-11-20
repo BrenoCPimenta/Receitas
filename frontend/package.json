@@ -1,0 +1,52 @@
+{
+  "name": "receitas-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "pre-commit": "lint-staged"
+  },
+  "dependencies": {
+    "@avalanche/eslint-config": "^4.0.0",
+    "classnames": "^2.3.1",
+    "core-js": "^3.6.5",
+    "eslint-plugin-cypress": "^2.12.1",
+    "reset-css": "^4.0.1",
+    "sass": "^1.17.0",
+    "sass-loader": "^7.1.0",
+    "vue": "^2.6.6",
+    "vue-router": "^3.0.2",
+    "vue-template-compiler": "^2.6.6",
+    "vuetify": "^2.4.0",
+    "vuex": "^3.1.0"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.16.3",
+    "@babel/eslint-plugin": "^7.14.5",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "eslint": "^7.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-vue": "^5.2.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "vue-cli-plugin-vuetify": "~2.4.3",
+    "vuetify-loader": "^1.7.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "npm run lint"
+    ]
+  }
+}
