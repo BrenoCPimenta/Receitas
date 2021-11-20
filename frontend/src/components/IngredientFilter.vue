@@ -118,10 +118,6 @@
           color: 'red',
         },
         {
-          text: 'Laranja',
-          color: 'orange',
-        },
-        {
           text: 'Abacaxi',
           color: 'yellow',
         },       

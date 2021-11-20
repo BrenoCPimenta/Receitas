@@ -19,7 +19,7 @@
        <v-container>
         <v-row align="center" justify="center">
           <v-img
-          src="../assets/receitinhas3.png"
+          src="../assets/receitinhas4.png"
           max-width="40em"
           
           ></v-img>
