@@ -59,7 +59,6 @@ Histórias: 0, 1, 2, 3 e 4.
     - 2 Adicionar linter Back (Luiz)
     - 3 Adicionar elasticsearch no projeto (Luiz)
       1. caso seja muito difícil usar essa ferramenta, usar um banco de dados padrão (https://sunscrapers.com/blog/how-to-use-elasticsearch-with-django/)
-2. Como usuário, quero buscar receitas que usem o que tenho na geladeira.
     - 4 Conteinerizar todo o ambiente (Breno)
     - 5 Inicializar o projeto django (Breno)
     - 6 Integrar elasticsearch com o django (Breno / Luiz)
