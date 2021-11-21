@@ -1,13 +1,19 @@
 <template>
-  <div :class="$style.wrap">
-    <div :class="$style.filter">
-      <v-slot:filter/>
-    </div>
-    <div :class="$style.grid">
-      <slot name="grid"/>
-    </div>
-    <div :class="$style.pagination">
-      <slot name="pagination"/>
+  <div>
+    <div :class="$style.wrap">
+      <div :class="$style.filter">
+        <v-slot:filter/>
+      </div>
+      <div/>
+      <div :class="$style.grid">
+        <slot name="list"/>
+      </div>
+      <div :class="$style.grid">
+        <slot name="grid"/>
+      </div>
+      <div :class="$style.pagination">
+        <slot name="pagination"/>
+      </div>
     </div>
   </div>
 </template>

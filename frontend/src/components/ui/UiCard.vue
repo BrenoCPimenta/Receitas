@@ -39,7 +39,7 @@ export default UiCard;
 <style lang="scss">
 .UiCard {
   overflow: hidden;
-  // border: 1px solid #dfdfdf;
+  border: 1px solid #152348;
   border-radius: 0.25rem;
   background-color: white;
 }
