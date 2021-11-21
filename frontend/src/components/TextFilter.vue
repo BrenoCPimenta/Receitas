@@ -23,7 +23,6 @@
             type="text"
             class="mx-2 rounded-xl"
             color="mycolor"
-            @click:append="searchByText"
             @keyup.enter="searchByText"
           />
         </v-col>
@@ -38,6 +37,7 @@
             depressed
             rounded
             fab
+            @click="searchByText"
           >
             <v-icon>mdi-magnify</v-icon>
           </v-btn>
