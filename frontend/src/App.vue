@@ -14,6 +14,11 @@ export default {
   components: {
     LayoutDefault,
   },
+  watch: {
+    $route(to) {
+      document.title = to.meta.title || `Receitinhas`;
+    },
+  },
 };
 </script>
 

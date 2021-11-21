@@ -40,6 +40,7 @@
         <ProductCard
           :img="product.img"
           :name="product.name"
+          :url="product.url"
         />
       </UiGridItem>
     </UiGrid>
