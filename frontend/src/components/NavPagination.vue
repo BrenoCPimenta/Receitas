@@ -1,134 +1,153 @@
 <template>
   <div :class="$style.wrap">
-    <Component
-      :is="currentPage > 1 ? `router-link` : `span`"
-      :to="{ query: routeQueryWithoutPage }"
-      :class="[
-        $style.control,
-        { [$style[`is-disabled`]]: currentPage === 1 }
-      ]"
-      aria-label="turn to page 1"
-      data-qa="first page link"
-      @click.native="$emit(`turn-to-page`, 1)"
+    <v-container
+      fill-height
+      fluid
     >
-      <v-btn v-if= "currentPage !== 1"
-        rounded
-        depressed
-        color="mycolor"
-        class="ma-2 white--text"
+      <v-row
+        align="baseline"
+        justify="center"
+        no-gutters
       >
-        <v-icon>mdi-page-first</v-icon>
-      </v-btn>
-      
-      <v-btn v-if= "currentPage === 1"
-        rounded
-        disabled
-        depressed
-        class="ma-2 white--text"
-      >
-        <v-icon>mdi-page-first</v-icon>
-      </v-btn>
-    </Component>
-    <Component
-      :is="currentPage > 1 ? `router-link` : `span`"
-      :to="{ query: { ...routeQueryWithoutPage, page: previousPage } }"
-      :class="[
-        $style.control,
-        { [$style[`is-disabled`]]: currentPage === 1 }
-      ]"
-      :aria-label="`turn to page ${previousPage}`"
-      data-qa="previous page link"
-      @click.native="$emit(`turn-to-page`, previousPage)"
-    >
-      <v-btn v-if= "currentPage !== 1"
-        rounded
-        depressed
-        color="mycolor"
-        class="ma-2 white--text"
-      >
-        <v-icon>mdi-chevron-left</v-icon>
-      </v-btn>
-      
-      <v-btn v-if= "currentPage === 1"
-        rounded
-        disabled
-        depressed
-        class="ma-2 white--text"
-      >
-        <v-icon>mdi-chevron-left</v-icon>
-      </v-btn>
-    </Component>
-      <div :class="$style.status">
-        <v-chip
-          color= "mycolor" 
-          outlined
-          large
+        <Component
+          :is="currentPage > 1 ? `router-link` : `span`"
+          :to="{ query: routeQueryWithoutPage }"
+          :class="[
+            $style.control,
+            { [$style[`is-disabled`]]: currentPage === 1 }
+          ]"
+          aria-label="turn to page 1"
+          data-qa="first page link"
+          @click.native="$emit(`turn-to-page`, 1)"
         >
-          <span class="mycolor--text font-weight-bold">
-          {{ currentPage }}
-          /
-          {{ pageCount }}
-          </span>
-        </v-chip>
-      </div>
-    <Component
-      :is="currentPage < pageCount ? `router-link` : `span`"
-      :to="{ query: { ...routeQueryWithoutPage, page: nextPage } }"
-      :class="[
-        $style.control,
-        { [$style[`is-disabled`]]: currentPage === pageCount }
-      ]"
-      :aria-label="`turn to page ${nextPage}`"
-      data-qa="next page link"
-      @click.native="$emit(`turn-to-page`, nextPage)"
-    >
-      <v-btn v-if= "currentPage !== pageCount"
-        rounded
-        depressed
-        color="mycolor"
-        class="ma-2 white--text"
-      >
-        <v-icon>mdi-chevron-right</v-icon>
-      </v-btn>
-      
-      <v-btn v-if= "currentPage === pageCount"
-        rounded
-        disabled
-        depressed
-        class="ma-2 white--text"
-      >
-        <v-icon>mdi-chevron-right</v-icon>
-      </v-btn>
-    </Component>
-    <Component
-      :is="currentPage < pageCount ? `router-link` : `span`"
-      :to="{ query: { ...routeQueryWithoutPage, page: pageCount } }"
-      :class="[
-        $style.control,
-        { [$style[`is-disabled`]]: currentPage === pageCount }
-      ]"
-      :aria-label="`turn to page ${pageCount}`"
-      data-qa="last page link"
-      @click.native="$emit(`turn-to-page`, pageCount)"
-    >
-      <v-btn v-if= "currentPage !== pageCount"
-        rounded
-        depressed
-        color="mycolor"
-        class="ma-2 white--text"
-      >
-        <v-icon>mdi-page-last</v-icon>
-      </v-btn>
-      
-      <v-btn v-if= "currentPage === pageCount"
-        rounded
-        disabled
-        depressed
-        class="ma-2 white--text"
-      >
-        <v-icon>mdi-page-last</v-icon>
-      </v-btn>
-    </Component>
+          <v-btn
+            v-if="currentPage !== 1"
+            rounded
+            depressed
+            color="mycolor"
+            class="ma-2 white--text"
+          >
+            <v-icon>mdi-page-first</v-icon>
+          </v-btn>
+
+          <v-btn
+            v-if="currentPage === 1"
+            rounded
+            disabled
+            depressed
+            class="ma-2 white--text"
+          >
+            <v-icon>mdi-page-first</v-icon>
+          </v-btn>
+        </Component>
+        <Component
+          :is="currentPage > 1 ? `router-link` : `span`"
+          :to="{ query: { ...routeQueryWithoutPage, page: previousPage } }"
+          :class="[
+            $style.control,
+            { [$style[`is-disabled`]]: currentPage === 1 }
+          ]"
+          :aria-label="`turn to page ${previousPage}`"
+          data-qa="previous page link"
+          @click.native="$emit(`turn-to-page`, previousPage)"
+        >
+          <v-btn
+            v-if="currentPage !== 1"
+            rounded
+            depressed
+            color="mycolor"
+            class="ma-2 white--text"
+          >
+            <v-icon>mdi-chevron-left</v-icon>
+          </v-btn>
+
+          <v-btn
+            v-if="currentPage === 1"
+            rounded
+            disabled
+            depressed
+            class="ma-2 white--text"
+          >
+            <v-icon>mdi-chevron-left</v-icon>
+          </v-btn>
+        </Component>
+        <div :class="$style.status">
+          <v-chip
+            color="mycolor"
+            outlined
+            large
+          >
+            <span class="mycolor--text-h6 font-weight-bold">
+              {{ currentPage }}
+              /
+              {{ pageCount }}
+            </span>
+          </v-chip>
+        </div>
+        <Component
+          :is="currentPage < pageCount ? `router-link` : `span`"
+          :to="{ query: { ...routeQueryWithoutPage, page: nextPage } }"
+          :class="[
+            $style.control,
+            { [$style[`is-disabled`]]: currentPage === pageCount }
+          ]"
+          :aria-label="`turn to page ${nextPage}`"
+          data-qa="next page link"
+          @click.native="$emit(`turn-to-page`, nextPage)"
+        >
+          <v-btn
+            v-if="currentPage !== pageCount"
+            rounded
+            depressed
+            color="mycolor"
+            class="ma-2 white--text"
+          >
+            <v-icon>mdi-chevron-right</v-icon>
+          </v-btn>
+
+          <v-btn
+            v-if="currentPage === pageCount"
+            rounded
+            disabled
+            depressed
+            class="ma-2 white--text"
+          >
+            <v-icon>mdi-chevron-right</v-icon>
+          </v-btn>
+        </Component>
+        <Component
+          :is="currentPage < pageCount ? `router-link` : `span`"
+          :to="{ query: { ...routeQueryWithoutPage, page: pageCount } }"
+          :class="[
+            $style.control,
+            { [$style[`is-disabled`]]: currentPage === pageCount }
+          ]"
+          :aria-label="`turn to page ${pageCount}`"
+          data-qa="last page link"
+          @click.native="$emit(`turn-to-page`, pageCount)"
+        >
+          <v-btn
+            v-if="currentPage !== pageCount"
+            rounded
+            depressed
+            color="mycolor"
+            class="ma-2 white--text"
+          >
+            <v-icon>mdi-page-last</v-icon>
+          </v-btn>
+
+          <v-btn
+            v-if="currentPage === pageCount"
+            rounded
+            disabled
+            depressed
+            class="ma-2 white--text"
+          >
+            <v-icon>mdi-page-last</v-icon>
+          </v-btn>
+        </Component>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
