@@ -54,31 +54,38 @@ E as branchs serão divididas entre Front e Back como são aplicações independ
 Histórias: 0, 1, 2, 3 e 4.
 
 
-0. (Fazer setup do ambiente, banco de dados, etc)
-    - 1 Adicionar linter Front (Rafael)
-    - 2 Adicionar linter Back (Luiz)
-    - 3 Adicionar elasticsearch no projeto (Luiz)
-      1. caso seja muito difícil usar essa ferramenta, usar um banco de dados padrão (https://sunscrapers.com/blog/how-to-use-elasticsearch-with-django/)
-    - 4 Conteinerizar todo o ambiente (Breno)
-    - 5 Inicializar o projeto django (Breno)
-    - 6 Integrar elasticsearch com o django (Breno / Luiz)
-    - 7 Criar regras no repositório para seguir o SCM definido. (Breno / Rafael)
-    - 8 Obter dados
-    - 9 Adicionar receitas no elasticsearch (Luiz)
-1. Como usuário, quero buscar receitas por nome.
-    - 10 Criar página inicial com um componente contendo duas abas. (Rafael)
-    - 11 Criar componente na primeira aba para realizar busca por nome de receita. (Rafael)
-    - 12 Esse componente deve possuir um campo para o usuário entrar com o texto a ser pesquisado.
-    - 13 Criar um componente para listar as receitas que serão retornadas pela API. (Pedro)
-    - 14 Criar endpoint com requisição GET (Breno)
-    - 15 Essa requisição deve aceitar um parâmetro do tipo string, que será utilizado como filtro para receitas, e retornar uma lista de receitas.
-    - 16 Criar busca no elasticsearch para receitas (Luiz)
-2. Como usuário, quero buscar receitas que usem o que tenho na geladeira. 
-    - 17 Criar componente da segunda aba de pesquisa para informar os ingredientes a serem adicionados na busca. (Pedro)
-3. Como usuário, quero escolher a forma de visualização dos resultados. 
-    - 18 Fornecer 2 formas de visualização: grid com imagens e lista. (Pedro)
-          1. Grid como default (?), botão para alternar entre formas.
-4. Como usuário, quero ter mais informações sobre uma receita.
-    - 19 Ao clicar na receita, o usuário deve ser redirecionado para a página original da receita. (Rafael)
 
+
+0. (Fazer setup do ambiente, banco de dados, etc)
+    - [x] 1 Adicionar linter Front (Rafael)
+    - [x] 2 Adicionar linter Back (Breno)
+    - [x] 3 Adicionar elasticsearch no projeto (Luiz)
+      - caso seja muito difícil usar essa ferramenta, usar um banco de dados padrão (https://sunscrapers.com/blog/how-to-use-elasticsearch-with-django/)
+    - [x] 5 Inicializar o projeto django (Breno)
+    - [x] 6 Integrar elasticsearch com o django (Luiz)
+    - [x] 7 Criar regras no repositório para seguir o SCM definido. (Breno / Rafael / Luiz / Pedro)
+    - [x] 8 Obter dados (Luiz)
+    - [x] 9 Adicionar receitas no elasticsearch (Luiz)
+1. Como usuário, quero buscar receitas por nome.
+    - [ ] 10 Criar página inicial com um componente contendo duas abas. (Rafael)
+    - [ ] 11 Criar componente na primeira aba para realizar busca por nome de receita. (Rafael)
+      - Esse componente deve possuir um campo para o usuário entrar com o texto a ser pesquisado.
+    - [ ] 13 Criar um componente para listar as receitas que serão retornadas pela API. (Pedro)
+    - [ ] 14 Criar endpoint com requisição GET (Breno)
+      - Essa requisição deve aceitar um parâmetro do tipo string, que será utilizado como filtro para receitas, e retornar uma lista de receitas.
+    - [x] 16 Criar busca no elasticsearch para receitas (por 'nome') (Luiz)
+2. Como usuário, quero buscar receitas que usem o que tenho na geladeira. 
+    - [ ] 17 Criar componente da segunda aba de pesquisa para informar os ingredientes a serem adicionados na busca. (Pedro)
+    - [ ] 21 Criar busca no elasticsearch para ingredientes (lista) (Luiz)
+3. Como usuário, quero escolher a forma de visualização dos resultados. 
+    - [ ] 18 Fornecer 2 formas de visualização: grid com imagens e lista. (Pedro)
+      - Grid como default (?), botão para alternar entre formas.
+4. Como usuário, quero ter mais informações sobre uma receita.
+    - [ ] 19 Ao clicar na receita, o usuário deve ser redirecionado para a página original da receita. (Rafael)
+
+
+
+### À repensar:
+- 4 Conteinerizar todo o ambiente (Breno)
+- 20 Criar models e etc para elastic
 
