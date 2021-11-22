@@ -167,14 +167,16 @@ export default {
         }
 
         if (typeof v === `string`) {
-          v = {
+          const newV = {
             text: v,
             color: this.colors[this.nonce - 1],
           };
 
-          this.items.push(v);
+          this.items.push(newV);
 
-          this.nonce++;
+          this.nonce += 1;
+
+          return newV;
         }
 
 
