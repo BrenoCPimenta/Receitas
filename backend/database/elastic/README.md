@@ -55,3 +55,13 @@ xpack.security.enabled: false
 ```
 ./kibana-7.15.1-linux-x86_64/bin/kibana
 ```
+
+
+# Problemas encontrados
+
+1. O ElasticSearch janta memoria, então se vc tiver pouca memoria ou não quiser dividir sua ram com esse fominha, vc pd limitar a quantidade de memoria usada por ele, para isso, crie um arquivo chamado memory.options dentro do diretorio ```elasticsearch-7.15.1/config/jvm.options.d/``` , esse arquivo deve ter a seguinte conteudo (caso 1g ainda seja muito tente frações, por ex 500m):
+
+```
+-Xms1g
+-Xmx1g
+```
