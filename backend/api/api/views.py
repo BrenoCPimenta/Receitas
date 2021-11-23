@@ -24,14 +24,14 @@ class RecipesViewSet(viewsets.ViewSet):
                 if 'page' in params:
                     result = queries.search_by_name(
                                 name=params['name'],
-                                size=params['page'])
+                                size=int(params['page']))
                 else:
                     result = queries.search_by_name(name=params['name'])
             elif 'ingredients' in params:
                 if 'page' in params:
                     result = queries.search_by_ingredients(
                                 ingredients=params['ingredients'].split(','),
-                                size=params['page'])
+                                size=int(params['page']))
                 else:
                     result = queries.search_by_ingredients(
                                 ingredients=params['ingredients'].split(','))
@@ -44,7 +44,7 @@ class RecipesViewSet(viewsets.ViewSet):
         except Exception as e:
             # log(e)
             return Response(
-                    {'ValidationError': "Problem on search: \n"+ str(e)},
+                    {'ValidationError': "Problem on search: " + str(e)},
                     status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
