@@ -21,17 +21,17 @@ class RecipesViewSet(viewsets.ViewSet):
             # Instanciate and exec elasticsearch:
             queries = ElasticSearchQueries()
             if 'name' in params:
-                if 'pagination' in params:
+                if 'page' in params:
                     result = queries.search_by_name(
                                 name=params['name'],
-                                size=params['paginatio'])
+                                size=params['page'])
                 else:
                     result = queries.search_by_name(name=params['name'])
             elif 'ingredients' in params:
-                if 'pagination' in params:
+                if 'page' in params:
                     result = queries.search_by_ingredients(
                                 ingredients=params['ingredients'].split(','),
-                                size=params['paginatio'])
+                                size=params['page'])
                 else:
                     result = queries.search_by_ingredients(
                                 ingredients=params['ingredients'].split(','))
