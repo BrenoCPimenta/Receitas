@@ -76,7 +76,7 @@ Histórias: 0, 1, 2, 3 e 4.
     - [x] 16 Criar busca no elasticsearch para receitas (por 'nome') (Luiz)
 2. Como usuário, quero buscar receitas que usem o que tenho na geladeira. 
     - [ ] 17 Criar componente da segunda aba de pesquisa para informar os ingredientes a serem adicionados na busca. (Pedro)
-    - [ ] 21 Criar busca no elasticsearch para ingredientes (lista) (Luiz)
+    - [x] 20 Criar busca no elasticsearch para ingredientes (lista) (Luiz)
 3. Como usuário, quero escolher a forma de visualização dos resultados. 
     - [ ] 18 Fornecer 2 formas de visualização: grid com imagens e lista. (Pedro)
       - Grid como default (?), botão para alternar entre formas.
@@ -87,5 +87,5 @@ Histórias: 0, 1, 2, 3 e 4.
 
 ### À repensar:
 - 4 Conteinerizar todo o ambiente (Breno)
-- 20 Criar models e etc para elastic
+- 21 Criar models e etc para elastic
 
