@@ -1,7 +1,7 @@
 from datetime import datetime
 from pylint import epylint as lint
 import os
-from api import env
+import env
 
 try:
     with open("log_linter.txt", "a+") as f:

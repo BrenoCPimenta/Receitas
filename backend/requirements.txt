@@ -1,3 +1,4 @@
+-e git+ssh://git@github.com/BrenoCPimenta/Receitas.git@a141cd8913f4bd9d1e9cd0ac473a0bba5c488bf9#egg=api&subdirectory=backend/api
 appdirs==1.4.4
 apturl==0.5.2
 argon2-cffi==20.1.0
