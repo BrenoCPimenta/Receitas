@@ -24,14 +24,14 @@ class RecipesViewSet(viewsets.ViewSet):
                 if 'page' in params:
                     result = queries.search_by_name(
                                 name=params['name'],
-                                size=int(params['page']))
+                                page=int(params['page']))
                 else:
                     result = queries.search_by_name(name=params['name'])
             elif 'ingredients' in params:
                 if 'page' in params:
                     result = queries.search_by_ingredients(
                                 ingredients=params['ingredients'].split(','),
-                                size=int(params['page']))
+                                page=int(params['page']))
                 else:
                     result = queries.search_by_ingredients(
                                 ingredients=params['ingredients'].split(','))
