@@ -1,0 +1,80 @@
+{
+    "recipes": {
+        "mappings": {
+            "properties": {
+                "link": {
+                    "type": "text", 
+                    "fields": {
+                        "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 1024
+                        }
+                    }
+                },
+                "html": {
+                    "type": "text"
+                },
+                "ingredients": {
+                    "type": "text",
+                    "fields": {
+                        "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                        }
+                    }
+                }, 
+                "raw_text": {
+                    "type": "text"
+                },
+                "page_title": {
+                    "type": "text",
+                    "fields": {
+                        "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                        }
+                    }
+                },
+                "recipe_title": {
+                    "type": "text",
+                    "fields": {
+                        "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                        }
+                    }
+                },
+                "portions": {
+                    "type": "integer"
+                },
+                "favorites": {
+                    "type": "integer"
+                },
+                "comments": {
+                    "type": "integer"
+                },
+                "group": {
+                    "type": "text",
+                    "fields": {
+                        "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                        }
+                    }
+                },
+                "images": {
+                    "type": "text",
+                    "fields": {
+                        "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 1024
+                        }
+                    }
+                },
+                "preparation_time": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}
