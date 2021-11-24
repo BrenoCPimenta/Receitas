@@ -71,7 +71,7 @@ Histórias: 0, 1, 2, 3 e 4.
     - [ ] 11 Criar componente na primeira aba para realizar busca por nome de receita. (Rafael)
       - Esse componente deve possuir um campo para o usuário entrar com o texto a ser pesquisado.
     - [ ] 13 Criar um componente para listar as receitas que serão retornadas pela API. (Pedro)
-    - [ ] 14 Criar endpoint com requisição GET (Breno)
+    - [x] 14 Criar endpoint com requisição GET (Breno)
       - Essa requisição deve aceitar um parâmetro do tipo string, que será utilizado como filtro para receitas, e retornar uma lista de receitas.
     - [x] 16 Criar busca no elasticsearch para receitas (por 'nome') (Luiz)
 2. Como usuário, quero buscar receitas que usem o que tenho na geladeira. 
