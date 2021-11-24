@@ -67,21 +67,21 @@ Histórias: 0, 1, 2, 3 e 4.
     - [x] 8 Obter dados (Luiz)
     - [x] 9 Adicionar receitas no elasticsearch (Luiz)
 1. Como usuário, quero buscar receitas por nome.
-    - [ ] 10 Criar página inicial com um componente contendo duas abas. (Rafael)
-    - [ ] 11 Criar componente na primeira aba para realizar busca por nome de receita. (Rafael)
+    - [x] 10 Criar página inicial com um componente contendo duas abas. (Rafael)
+    - [x] 11 Criar componente na primeira aba para realizar busca por nome de receita. (Rafael)
       - Esse componente deve possuir um campo para o usuário entrar com o texto a ser pesquisado.
-    - [ ] 13 Criar um componente para listar as receitas que serão retornadas pela API. (Pedro)
+    - [x] 13 Criar um componente para listar as receitas que serão retornadas pela API. (Pedro)
     - [x] 14 Criar endpoint com requisição GET (Breno)
       - Essa requisição deve aceitar um parâmetro do tipo string, que será utilizado como filtro para receitas, e retornar uma lista de receitas.
     - [x] 16 Criar busca no elasticsearch para receitas (por 'nome') (Luiz)
 2. Como usuário, quero buscar receitas que usem o que tenho na geladeira. 
-    - [ ] 17 Criar componente da segunda aba de pesquisa para informar os ingredientes a serem adicionados na busca. (Pedro)
+    - [x] 17 Criar componente da segunda aba de pesquisa para informar os ingredientes a serem adicionados na busca. (Pedro)
     - [x] 20 Criar busca no elasticsearch para ingredientes (lista) (Luiz)
 3. Como usuário, quero escolher a forma de visualização dos resultados. 
-    - [ ] 18 Fornecer 2 formas de visualização: grid com imagens e lista. (Pedro)
+    - [x] 18 Fornecer 2 formas de visualização: grid com imagens e lista. (Pedro)
       - Grid como default (?), botão para alternar entre formas.
 4. Como usuário, quero ter mais informações sobre uma receita.
-    - [ ] 19 Ao clicar na receita, o usuário deve ser redirecionado para a página original da receita. (Rafael)
+    - [x] 19 Ao clicar na receita, o usuário deve ser redirecionado para a página original da receita. (Rafael)
 
 
 
