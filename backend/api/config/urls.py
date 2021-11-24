@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from api.views import RecipesViewSet, test_route
 from rest_framework import routers
+from api.views import RecipesViewSet  # , test_route
 
 # Routers:
 router = routers.DefaultRouter()
@@ -26,5 +26,5 @@ router.register(r'recipes', RecipesViewSet, basename='recipes')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('test/', test_route),
+    # path('test/', test_route),
 ]
