@@ -1,10 +1,21 @@
+""" Definition of elasticsearch class.
+
+Connects to elasticsearch and performs search
+by ingredients and recipe names.
+
+Typical usage example:
+
+  queries = ElasticSearchQueries()
+  ingredients_info = queries.search_by_ingredients([ingredients])
+  recipe_info = result = queries.search_by_ingredients(name)
+"""
 import elasticsearch as es
 
 
 def parse_result(result):
     """
-    Parses the result from elasticsearch. Returns the contens inside _source for
-    each result.
+    Parses the result from elasticsearch. Returns the contens inside _source
+    for each result.
         result: dict.
     """
     data = []
@@ -32,11 +43,11 @@ class ElasticSearchQueries:
         self.index = index
         self.es = es.Elasticsearch([{'host': self.host, 'port': self.port}])
         self.returning_fields = [
-            'recipe_title', 
-            'page_title', 
+            'recipe_title',
+            'page_title',
             'link',
             'images',
-            'raw_text', 
+            'raw_text',
             'group',
             'comments',
             'favorites',
@@ -44,49 +55,49 @@ class ElasticSearchQueries:
             'portions'
         ]
 
-    def reset_returning_fields(self,fields):
+    def reset_returning_fields(self, fields):
         """
         Resets the returning fields.
             fields: list of strings.
         """
         self.returning_fields = fields
-    
+
     def search_by_name(self, name, size=12, page=1, return_raw=False):
         """
         Search for recipes by name.
             name: string.
-            size: int, , default 10
+            size: int, default 10
                 Number of results to return.
             page: int, default 1.
             return_raw: bool, default False
                 If true, returns the raw result from elasticsearch.
-        """ 
+        """
         query = {
             "query": {
                 "multi_match": {
-                "query": name, 
-                "fields": [
-                    "recipe_title^2",
-                    "ingredients^2",
-                    "raw_text"
-                ],
-                "type": "most_fields",
-                "fuzziness": 1
+                    "query": name,
+                    "fields": [
+                        "recipe_title^2",
+                        "ingredients^2",
+                        "raw_text"
+                        ],
+                    "type": "most_fields",
+                    "fuzziness": 1
                 }
             }
         }
         response = self.es.search(
-            index = self.index,
-            body = query,
-            size = size,
-            from_= size*(page-1),
-            _source = self.returning_fields
+            index=self.index,
+            body=query,
+            size=size,
+            from_=size*(page-1),
+            _source=self.returning_fields
         )
 
         if return_raw:
             return response
         return parse_result(response)
-    
+
     def search_by_ingredients(self, ingredients, size=12, page=1, return_raw=False):
         """
         Search for recipes by ingredients.
@@ -106,7 +117,7 @@ class ElasticSearchQueries:
                                 "ingredients": {
                                     "query": ingredient,
                                     "fuzziness": 1
-                                },                                
+                                },
                             }
                         } for ingredient in ingredients
                     ]
@@ -114,11 +125,11 @@ class ElasticSearchQueries:
             }
         }
         response = self.es.search(
-            index = self.index,
-            body = query,
-            size = size,
-            from_ = size*(page-1),
-            _source = self.returning_fields
+            index=self.index,
+            body=query,
+            size=size,
+            from_=size*(page-1),
+            _source=self.returning_fields
         )
 
         if return_raw:

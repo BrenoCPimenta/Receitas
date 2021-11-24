@@ -1,8 +1,10 @@
-# from django.shortcuts import render
+""" API controller.
+"""
+
 from rest_framework import status
 from rest_framework import viewsets
 from rest_framework.decorators import action
-from rest_framework.decorators import api_view
+# from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from api.elastic_queries import ElasticSearchQueries
@@ -10,11 +12,27 @@ from api.elastic_queries import ElasticSearchQueries
 
 class RecipesViewSet(viewsets.ViewSet):
     """
-    Responsible for controlling
-    elastic recipes
+    Elasticsearch recipes controler
+
+    Args:
+        Viewset (viewsets.ViewSet): drf class
     """
+
     @action(detail=False, methods=['get'])
-    def search(self, request, pk=None):
+    def search(self, request):
+        """
+        Endpoints for search into elasticsearch
+
+        Args:
+            request (request): data with request information
+
+        Returns:
+            Response (drf.response): 200: with elasticsearch result
+            400: for not containing correct parameters
+            500: for error on elasticsearch search
+
+        """
+
         try:
             # Read url parameters:
             params = self.request.query_params.dict()
@@ -42,15 +60,12 @@ class RecipesViewSet(viewsets.ViewSet):
             return Response(result)
 
         except Exception as e:
-            # log(e)
             return Response(
                     {'ValidationError': "Problem on search: " + str(e)},
                     status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-@api_view(['GET'])
-def test_route(request):
-    """
-    Keeps a test route on the system
-    """
-    return Response({"message": "You're on test ground"})
+#  @api_view(['GET'])
+#  def test_route(request):
+#  Keeps a test route on the system
+#    return Response({"message": "You're on test ground"})

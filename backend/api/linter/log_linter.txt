@@ -40,10 +40,26 @@
  api/models.py:1: warning (W0611, unused-import, ) Unused models imported from django.db
  ************* Module config.urls
  config/urls.py:19: convention (C0411, wrong-import-order, ) third party import "from rest_framework import routers" should be placed before "from api.views import RecipesViewSet, test_route"
- 
+
  ------------------------------------------------------------------
  Your code has been rated at 3.66/10 (previous run: 3.66/10, +0.00)
- 
- 
 
 
+
+[LOG] 23/11/2021 21:43:47
+
+************* Module api.views
+ api/views.py:62: warning (W0703, broad-except, RecipesViewSet.search) Catching too general exception Exception
+ api/views.py:62: convention (C0103, invalid-name, RecipesViewSet.search) Variable name "e" doesn't conform to snake_case naming style
+ api/views.py:22: warning (W0613, unused-argument, RecipesViewSet.search) Unused argument 'request'
+ ************* Module api.elastic_queries
+ api/elastic_queries.py:44: convention (C0103, invalid-name, ElasticSearchQueries.__init__) Attribute name "es" doesn't conform to snake_case naming style
+ api/elastic_queries.py:89: error (E1123, unexpected-keyword-arg, ElasticSearchQueries.search_by_name) Unexpected keyword argument 'size' in method call
+ api/elastic_queries.py:89: error (E1123, unexpected-keyword-arg, ElasticSearchQueries.search_by_name) Unexpected keyword argument 'from_' in method call
+ api/elastic_queries.py:89: error (E1123, unexpected-keyword-arg, ElasticSearchQueries.search_by_name) Unexpected keyword argument '_source' in method call
+ api/elastic_queries.py:127: error (E1123, unexpected-keyword-arg, ElasticSearchQueries.search_by_ingredients) Unexpected keyword argument 'size' in method call
+ api/elastic_queries.py:127: error (E1123, unexpected-keyword-arg, ElasticSearchQueries.search_by_ingredients) Unexpected keyword argument 'from_' in method call
+ api/elastic_queries.py:127: error (E1123, unexpected-keyword-arg, ElasticSearchQueries.search_by_ingredients) Unexpected keyword argument '_source' in method call
+
+ ------------------------------------------------------------------
+ Your code has been rated at 6.09/10 (previous run: 3.66/10, +2.44)
