@@ -22,6 +22,9 @@ export default new Router({
           component: () => import(`./components/IngredientFilter.vue`),
         },
       ],
+      meta: {
+        title: `Receitinhas`,
+      },
     },
   ],
 });
