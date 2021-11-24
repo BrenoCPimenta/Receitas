@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 #elastic folder
-elastic/*
-!elastic/README.md
+backend/database/elastic/*
+!backend/database/elastic/README.md
