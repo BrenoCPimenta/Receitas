@@ -41,13 +41,13 @@ E as branchs serão divididas entre Front e Back como são aplicações independ
 4. Como usuário, quero ter mais informações sobre uma receita.
 5. Como usuário, quero uma página inicial com receitas relevantes.
 6. Como usuário quero fazer buscas avançadas (com filtros, por tipos de receita, por avaliação, por porções, por tempo de preparo).
-7. Como desenvolvedor, quero obter feedbacks dos usuários a respeito dos resultados das buscas.
+7. Como usuário, quero enviar feedback a respeito dos resultados das buscas.
 8. Como usuário, quero criar uma conta.
 9. Como usuário, quero fazer login.
 10. Como usuário, quero salvar minhas receitas favoritas.
 11. Como usuário, quero resultados personalizados. (Extra)
 12. Como usuário, quero a opção de visualizar a aplicação em Dark Mode.
-
+13. Como desenvolvedor, quero entender os feedbacks recebidos.
 
 ### Backlog Sprint 1
 
@@ -88,4 +88,44 @@ Histórias: 0, 1, 2, 3 e 4.
 ### A repensar:
 - 4 Conteinerizar todo o ambiente (Breno)
 - 21 Criar models e etc para elastic
+
+### Backlog Sprint 2
+
+Histórias: 6, 7 e 13.
+
+
+
+6. Como usuário quero fazer buscas avançadas (com filtros, por tipos de receita, por avaliação, por porções, por tempo de preparo).
+     - [ ] 22 Teste GET ingredientes; (Breno)
+     - [ ] 23 Teste GET receitas; (Breno)
+     - [ ] 24 Teste GET filtros; (Breno)
+     - [ ] 25 Teste com Elastic (Breno)
+     - [ ] 26 Implementar filtro por avaliação (Luiz)
+     - [ ] 27 Implementar filtro por tipo de receita (Luiz)
+     - [ ] 28 Implementar filtro por porções (Luiz)
+     - [ ] 29 Implementar filtro por tempo de preparo (Luiz)
+     - [ ] 30 Modificar endpoints para suportar filtros (Breno)
+     - [ ] 31 Integrar e utilizar endpoints (Pedro)
+     - [ ] 32 Adicionar filtro por avaliação (Pedro)
+     - [ ] 33 Adicionar filtro por tipo de receita (Pedro)
+     - [ ] 34 Adicionar filtro por porções (Pedro)
+     - [ ] 35 Adicionar filtro por tempo de preparo (Pedro)
+7. Como usuário, quero enviar feedback a respeito dos resultados das buscas.
+     - [ ] 36 Criar conexão com o Postgre (Breno)
+     - [ ] 37 Criar DB Postgre (Breno)
+     - [ ] 38 Criar Tabela feedback no banco Postgre (Breno)
+     - [ ] 39 Criar endpoint para receber e armazenar feedback (Luiz)
+     - [ ] 40 Criar UI para registrar feedback (Rafael)
+     - [ ] 41 Criar serviço para enviar feedback (Rafael)
+     - [ ] 42 Retornar ID da pesquisa junto da resposta (Luiz)
+     - [ ] 43 Teste dos IDs das respostas (Luiz)
+13. Como desenvolvedor, quero entender os feedbacks recebidos.
+     - [ ] 44 Criar tela de dashboard (Rafael)
+     - [ ] 45 Criar rota para a tela de dashboard (Rafael)
+     - [ ] 46 Criar componente com gráfico para visualizar qualidade das pesquisas (Rafael)
+     - [ ] 47 Definir e criar funções para calcular estatísticas de feedback (Luiz)
+     - [ ] 48 Criar Mapper para estatísticas serem recebidas pelo framework de gráficos do front (Luiz)
+     - [ ] 49 Criar endpoints para obter as estatísticas de feedback mapeadas (Luiz)
+     - [ ] 50 Criar testes unitários para as funções de estatísticas dos feedbacks (Luiz)
+
 
