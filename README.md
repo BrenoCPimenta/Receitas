@@ -85,7 +85,7 @@ Histórias: 0, 1, 2, 3 e 4.
 
 
 
-### À repensar:
+### A repensar:
 - 4 Conteinerizar todo o ambiente (Breno)
 - 21 Criar models e etc para elastic
 
