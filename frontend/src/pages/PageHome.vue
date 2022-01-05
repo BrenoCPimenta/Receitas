@@ -49,6 +49,7 @@
       <RouterView/>
 
       <div :class="$style.listing">
+        <SearchRating />
         <ProductListingContainer/>
       </div>
     </div>
@@ -57,11 +58,13 @@
 
 <script>
 import ProductListingContainer from '../components/ProductListingContainer.vue';
+import SearchRating from '../components/SearchRating.vue';
 
 export default {
   name: `PageProducts`,
   components: {
     ProductListingContainer,
+    SearchRating
   },
   data: () => ({
     currentTab: null,
