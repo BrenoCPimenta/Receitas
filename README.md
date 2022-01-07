@@ -115,7 +115,7 @@ Histórias: 6, 7 e 13.
      - [ ] 37 Criar DB Postgre (Breno)
      - [ ] 38 Criar Tabela feedback no banco Postgre (Breno)
      - [ ] 39 Criar endpoint para receber e armazenar feedback (Luiz)
-     - [ ] 40 Criar UI para registrar feedback (Rafael)
+     - [x] 40 Criar UI para registrar feedback (Rafael)
      - [ ] 41 Criar serviço para enviar feedback (Rafael)
      - [ ] 42 Retornar ID da pesquisa junto da resposta (Luiz)
      - [ ] 43 Teste dos IDs das respostas (Luiz)
