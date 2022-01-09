@@ -152,7 +152,13 @@
           outlined
           @click="clickFilters"
         >
-          <v-icon>mdi-chevron-down</v-icon>Filtros
+          <v-icon v-if="show">
+            mdi-chevron-up
+          </v-icon>
+          <v-icon v-if="!show">
+            mdi-chevron-down
+          </v-icon>
+          Filtros
         </v-btn>
       </v-row>
     </v-container>
