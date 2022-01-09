@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column align-center">
+  <div class="pt-8 d-flex flex-column align-center">
     <p>Quão satisfeito você ficou com o resultado dessa busca?</p>
     <v-rating
       v-if="!ratingSubmitted"

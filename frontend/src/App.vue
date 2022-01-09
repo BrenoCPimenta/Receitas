@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import LayoutDefault from './layouts/LayoutDefault.vue';
 
 export default {
@@ -17,6 +18,14 @@ export default {
   watch: {
     $route(to) {
       document.title = to.meta.title || `Receitinhas`;
+
+      const query = to.fullPath.substring(to.fullPath.lastIndexOf(`/`) + 1);
+      if (query) {
+        axios
+          .get(`http://localhost:8000/recipes/search/${query}`)
+          .then(response => (this.$store.dispatch(`setInfo`, response.data)))
+          .catch(error => console.log(error));
+      }
     },
   },
 };

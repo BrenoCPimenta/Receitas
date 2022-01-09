@@ -67,14 +67,6 @@ export default {
     };
   },
   created() {
-    // const db = [
-    //   {
-    //   img: `https://img.itdg.com.br/tdg/images/recipes/000/016/663/84433/84433_original.jpg?mode=crop&amp;width=300&amp;height=200`,
-    //   recipe_title: `Patê de tomate seco`,
-    //   url: `https://www.tudogostoso.com.br/receita/35234-risoto-com-tomate-seco-mussarela-e-rucula-da-tam.html`,
-    //   },
-    // ]
-
     const db = this.$store.getters.info;
     // console.log(this.$store.getters.info);
 
