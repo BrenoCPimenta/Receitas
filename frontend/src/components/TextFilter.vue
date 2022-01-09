@@ -15,7 +15,7 @@
           md="11"
         >
           <v-text-field
-            v-model="queryString"
+            v-model="name"
             light
             clearable
             outlined
@@ -44,25 +44,51 @@
         </v-col>
       </v-row>
     </v-container>
+    <!-- <hr>
+    <v-container
+      fill-height
+      fluid
+    >
+      <v-row class="pt-2" justify="center">
+        <v-btn
+            color="mycolor"
+            class="mx-2 white--text"
+            depressed
+            rounded
+            outlined
+          >
+            <v-icon>mdi-chevron-down</v-icon>Filtros
+          </v-btn>
+      </v-row>
+    </v-container> -->
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
-      queryString: ``,
+      name: ``,
     };
   },
   methods: {
     searchByText() {
-      const { queryString } = this;
-      this.$router.push({ query: { queryString } });
+      const { name } = this;
+      this.$router.push({ query: { name } });
+      axios
+        .get(`http://localhost:8000/recipes/search/?name=${name}`)
+        .then(response => (this.$store.dispatch(`setInfo`, response.data)))
+        .catch(error => console.log(error)); // eslint-disable-line no-console
     },
   },
+
 };
 </script>
 
 <style>
+
+hr { background-color: #152348; height: 1px; border: 0; }
 
 </style>

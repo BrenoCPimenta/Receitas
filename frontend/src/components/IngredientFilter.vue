@@ -118,6 +118,7 @@
           depressed
           rounded
           fab
+          @click="searchByIngredients"
         >
           <v-icon>mdi-magnify</v-icon>
         </v-btn>
@@ -127,6 +128,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data: () => ({
     activator: null,
@@ -208,7 +211,13 @@ export default {
         .indexOf(query.toString().toLowerCase()) > -1;
     },
     searchByIngredients() {
-      // to do
+      const ingredients = this.model.map(item => item.text);
+      const ingredientsString = ingredients.join(`,`);
+      this.$router.push({ query: { ingredientsString } });
+      axios
+        .get(`http://localhost:8000/recipes/search/?ingredients=${ingredientsString}`)
+        .then(response => (this.$store.dispatch(`setInfo`, response.data)))
+        .catch(error => console.log(error)); // eslint-disable-line no-console
     },
   },
 };

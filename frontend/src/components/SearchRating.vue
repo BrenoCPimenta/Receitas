@@ -12,25 +12,27 @@
       size="24"
       :value="rating"
       @input="setRating"
-    ></v-rating>
-    <p v-else>Obrigado pela avaliação.</p>
+    />
+    <p v-else>
+      Obrigado pela avaliação.
+    </p>
   </div>
 </template>
 
 <script>
 export default {
-  name: "SearchRating",
+  name: `SearchRating`,
   computed: {
-    rating: function () {
+    rating() {
       return this.$store.getters.rating;
     },
-    ratingSubmitted: function () {
+    ratingSubmitted() {
       return this.rating !== null;
     },
   },
   methods: {
     setRating(value) {
-      this.$store.dispatch("setRating", value);
+      this.$store.dispatch(`setRating`, value);
     },
   },
 };

@@ -49,8 +49,8 @@
       <RouterView/>
 
       <div :class="$style.listing">
-        <SearchRating />
-        <ProductListingContainer/>
+        <SearchRating/>
+        <ProductListingContainer :key="componentKey"/>
       </div>
     </div>
   </div>
@@ -64,11 +64,18 @@ export default {
   name: `PageProducts`,
   components: {
     ProductListingContainer,
-    SearchRating
+    SearchRating,
   },
   data: () => ({
     currentTab: null,
+    componentKey: 0,
   }),
+  watch: {
+    '$store.state.info': function () {
+      // console.log(this.$store.state.info);
+      this.componentKey += 1;
+    },
+  },
   created() {
     this.tabs = [
       {
@@ -78,7 +85,7 @@ export default {
       },
       {
         text: `Busca por Ingredientes`,
-        route: `/ingredientes?text=novo`,
+        route: `/ingredientes/`,
         iconName: `mdi-format-list-checks`,
       },
     ];
