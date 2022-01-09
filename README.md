@@ -105,7 +105,7 @@ Histórias: 6, 7 e 13.
      - [ ] 28 Implementar filtro por porções (Luiz)
      - [ ] 29 Implementar filtro por tempo de preparo (Luiz)
      - [ ] 30 Modificar endpoints para suportar filtros (Breno)
-     - [ ] 31 Integrar e utilizar endpoints (Pedro)
+     - [x] 31 Integrar e utilizar endpoints (Pedro)
      - [ ] 32 Adicionar filtro por avaliação (Pedro)
      - [ ] 33 Adicionar filtro por tipo de receita (Pedro)
      - [ ] 34 Adicionar filtro por porções (Pedro)
