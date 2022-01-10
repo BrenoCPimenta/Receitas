@@ -9,6 +9,7 @@ export default {
 
         if (queryChanged) {
           this.$emit(`route-query-change`, current.query);
+          this.$store.dispatch(`resetRating`);
         }
       },
     },

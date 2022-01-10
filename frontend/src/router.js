@@ -18,7 +18,7 @@ export default new Router({
           component: () => import(`./components/TextFilter.vue`),
         },
         {
-          path: `/ingredientes`,
+          path: `/ingredients/`,
           component: () => import(`./components/IngredientFilter.vue`),
         },
       ],

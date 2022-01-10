@@ -1,41 +1,43 @@
 <template>
-  <FrameApi
-    v-slot="{ data: products, meta, methods: { query: fetchList } }"
-    :endpoint="endpoint"
-  >
-    <FrameHooks
-      @created="fetchList({
-        filter: { category: $route.query.filter },
-        page: $route.query.page,
-      })"
-      @route-query-change="fetchList({
-        filter: { category: $event.filter },
-        page: $event.page,
-      })"
+  <div>
+    <FrameApi
+      v-slot="{ data: products, meta, methods: { query: fetchList } }"
+      :endpoint="endpoint"
     >
-      <ListingLayout data-qa="product listing">
-        <ProductGrid
-          v-if="view === 1 && products"
-          slot="grid"
-          :products="products"
-          @listView="listView()"
-        />
-        <ProductList
-          v-if="view === 0 && products"
-          slot="list"
-          :products="products"
-          @gridView="gridView()"
-        />
+      <FrameHooks
+        @created="fetchList({
+          filter: { category: $route.query.filter },
+          page: $route.query.page,
+        })"
+        @route-query-change="fetchList({
+          filter: { category: $event.filter },
+          page: $event.page,
+        })"
+      >
+        <ListingLayout data-qa="product listing">
+          <ProductGrid
+            v-if="view === 1 && products"
+            slot="grid"
+            :products="products"
+            @listView="listView()"
+          />
+          <ProductList
+            v-if="view === 0 && products"
+            slot="list"
+            :products="products"
+            @gridView="gridView()"
+          />
 
-        <NavPagination
-          v-if="products"
-          slot="pagination"
-          :route-query="$route.query"
-          :page-count="meta ? meta.pageCount : 0"
-        />
-      </ListingLayout>
-    </FrameHooks>
-  </FrameApi>
+          <NavPagination
+            v-if="products"
+            slot="pagination"
+            :route-query="$route.query"
+            :page-count="meta ? meta.pageCount : 0"
+          />
+        </ListingLayout>
+      </FrameHooks>
+    </FrameApi>
+  </div>
 </template>
 
 <script>
@@ -61,10 +63,15 @@ export default {
   data() {
     return {
       view: 1,
+      page: 1,
     };
   },
   created() {
+    const db = this.$store.getters.info;
+    // console.log(this.$store.getters.info);
+
     this.endpoint = options => get({
+      db,
       ...options,
       limit: 12,
     });
@@ -77,6 +84,5 @@ export default {
       this.view = 0;
     },
   },
-
 };
 </script>
