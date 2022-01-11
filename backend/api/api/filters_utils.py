@@ -2,7 +2,60 @@
 Functions that generate Elasticsearch query dictionaries.
 """
 
+group_mapping = {
+    'confeitaria': 'Bolos e tortas doces',
+    'lanches': 'Lanches',
+    'massas': 'Massas',
+    'acompanhamentos': 'Saladas, molhos e acompanhamentos',
+    'sobremesas': 'Doces e sobremesas',
+    'saudavel': 'Alimentação Saudável',
+    'carnes': 'Carnes',
+    'prato_unico': 'Prato Único',
+    'aves': 'Aves',
+    'bebidas': 'Bebidas',
+    'frutos_do_mar': 'Peixes e frutos do mar',
+    'sopas': 'Sopas'
+}
+
 class FilterUtils:
+    
+    def generate_filters(params):
+        """
+        Returns a dictionary with the filters to be used in the query.
+            params: request parameters. Available parameters for filters: 
+                    'group', 'time_min', 'time_max', 'portion_min', 
+                    'portion_max', 'favorites_min', 'favorites_max'.
+        """
+        filters = {}
+        if 'group' in params:
+            filters['group'] = [
+                group_mapping[group] 
+                for group in params['group'].split(',')
+            ]
+        
+        if 'time_min' in params or 'time_max' in params:
+            filters['preparation_time'] = (
+                params['time_min'] if 'time_min' in params else 0,
+                params['time_max'] if 'time_max' in params else 10000000
+            )
+        
+        if 'portions_min' in params or 'portions_max' in params:
+            filters['portions'] = (
+                params['portions_min'] if 'portions_min' in params else 0,
+                params['portions_max'] if 'portions_max' in params else 10000000
+            )
+        
+        if 'favorites_min' in params or 'favorites_max' in params:
+            filters['favorites'] = (
+                params['favorites_min'] if 'favorites_min' in params else 0,
+                params['favorites_max'] if 'favorites_max' in params else 10000000
+            )
+        
+        if len(filters) == 0:
+            return None
+        return filters
+
+
     def get_filter_queries(filters):
         """
         Returns a list of query dictionaries for filtering.
@@ -30,7 +83,7 @@ class FilterUtils:
                 queries.append(
                     {
                         "terms": {
-                            field_name+".keywords": field_value
+                            field_name+".keyword": field_value
                         }
                     }
                 )
@@ -64,7 +117,7 @@ class FilterUtils:
             }
         ]
         if filters:
-            must.append(get_filter_queries(filters))
+            must = must + FilterUtils.get_filter_queries(filters)
 
         query = {
             "query": {
@@ -73,4 +126,7 @@ class FilterUtils:
                 }
             }
         }
+
+        print(query)
         return query
+    
