@@ -23,8 +23,8 @@ class FilterUtils:
         """
         Returns a dictionary with the filters to be used in the query.
             params: request parameters. Available parameters for filters: 
-                    'group', 'time_min', 'time_max', 'portion_min', 
-                    'portion_max', 'favorites_min', 'favorites_max'.
+                    'group', 'time_min', 'time_max', 'portions_min', 
+                    'portions_max', 'favorites_min', 'favorites_max'.
         """
         filters = {}
         if 'group' in params:
@@ -126,7 +126,40 @@ class FilterUtils:
                 }
             }
         }
-
-        print(query)
         return query
+
+    def get_query_by_ingredients_filtred(ingredients, filters=None, fuzziness=1):
+        """
+        Returns a query dictionary for searching by ingredients with.
+            ingredients: list of strings.
+            filters: dictionary with the following structure:
+                {
+                    "<range_fild_name>": (start, end),
+                    "<multiple_options_field_name>": [option1, option2, ...],
+                    ...
+                }
+            fuzziness: int, default 1.
+        """
+        must = [
+            {
+                "match": {
+                    "ingredients": {
+                        "query": ingredient,
+                        "fuzziness": 1
+                    },
+                }
+            } for ingredient in ingredients
+        ]
+        if filters:
+            must = must + FilterUtils.get_filter_queries(filters)
+
+        query = {
+            "query": {
+                "bool": {
+                    "must": must
+                }
+            }
+        }
+        return query 
+
     

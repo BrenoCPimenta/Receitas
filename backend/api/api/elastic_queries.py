@@ -93,7 +93,7 @@ class ElasticSearchQueries:
             return response
         return parse_result(response)
 
-    def search_by_ingredients(self, ingredients, size=12, page=1, return_raw=False):
+    def search_by_ingredients(self, ingredients, filters=None, size=12, page=1, return_raw=False):
         """
         Search for recipes by ingredients.
             ingredients: list of strings.
@@ -103,22 +103,7 @@ class ElasticSearchQueries:
             return_raw: bool, default False
                 If true, returns the raw result from elasticsearch.
         """
-        query = {
-            "query": {
-                "bool": {
-                    "must": [
-                        {
-                            "match": {
-                                "ingredients": {
-                                    "query": ingredient,
-                                    "fuzziness": 1
-                                },
-                            }
-                        } for ingredient in ingredients
-                    ]
-                }
-            }
-        }
+        query = FilterUtils.get_query_by_ingredients_filtred(ingredients, filters)
         response = self.es.search(
             index=self.index,
             body=query,
