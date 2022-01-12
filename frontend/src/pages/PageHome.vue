@@ -85,7 +85,7 @@ export default {
       },
       {
         text: `Busca por Ingredientes`,
-        route: `/ingredientes/`,
+        route: `/ingredients/`,
         iconName: `mdi-format-list-checks`,
       },
     ];
