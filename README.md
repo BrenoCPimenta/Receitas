@@ -117,10 +117,10 @@ Histórias: 6, 7 e 13.
      - [x] 34 Adicionar filtro por porções (Pedro)
      - [x] 35 Adicionar filtro por tempo de preparo (Pedro)
 7. Como usuário, quero enviar feedback a respeito dos resultados das buscas.
-     - [ ] 36 Criar conexão com o Postgre (Breno)
+     - [x] 36 Criar conexão com o Postgre (Breno)
      - [X] 37 Criar DB Postgre (Breno)
      - [X] 38 Criar Tabela feedback no banco Postgre (Breno)
-     - [ ] 39 Criar endpoint para receber e armazenar feedback (Luiz)
+     - [x] 39 Criar endpoint para receber e armazenar feedback (Luiz)
      - [x] 40 Criar UI para registrar feedback (Rafael)
      - [X] 41 Criar serviço para enviar feedback (Rafael)   
    <br>
