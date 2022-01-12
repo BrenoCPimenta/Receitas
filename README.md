@@ -86,12 +86,12 @@ Histórias: 0, 1, 2, 3 e 4.
 
 
 ### A repensar:
-- 4 Conteinerizar todo o ambiente (Breno)
+- 4 Conteinerizar todo o ambiente 
 - 21 Criar models e etc para elastic
-- 47 Definir e criar funções para calcular estatísticas de feedback (Luiz)
-- 48 Criar Mapper para estatísticas serem recebidas pelo framework de gráficos do front (Luiz)
-- 49 Criar endpoints para obter as estatísticas de feedback mapeadas (Luiz)
-- 50 Criar testes unitários para as funções de estatísticas dos feedbacks (Luiz)
+- 47 Definir e criar funções para calcular estatísticas de feedback
+- 48 Criar Mapper para estatísticas serem recebidas pelo framework de gráficos do front 
+- 49 Criar endpoints para obter as estatísticas de feedback mapeadas 
+- 50 Criar testes unitários para as funções de estatísticas dos feedbacks 
 
 ### Backlog Sprint 2
 
