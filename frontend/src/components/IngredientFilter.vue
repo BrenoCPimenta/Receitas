@@ -129,10 +129,12 @@
 
     <SearchFilters
       v-if="show"
-      @selectA="selectA"
       @selectTR="selectTR"
-      @selectP="selectP"
-      @selectTP="selectTP"
+      @selectA="selectA"
+      @selectTP_min="selectTP_min"
+      @selectTP_max="selectTP_max"
+      @selectP_min="selectP_min"
+      @selectP_max="selectP_max"
     />
 
     <hr>
@@ -200,6 +202,13 @@ export default {
     search: null,
     y: 0,
 
+    group: null,
+    favorites_min: null,
+    favorites_max: null,
+    time_min: null,
+    time_max: null,
+    portions_min: null,
+    portions_max: null,
   }),
 
   watch: {
@@ -254,10 +263,29 @@ export default {
     },
     searchByIngredients() {
       const ingredients = this.model.map(item => item.text).join(`,`);
-      const filters = [this.f_a, this.f_tr, this.f_p, this.f_tp].join(`,`);
+      // const filters = [this.f_a, this.f_tr, this.f_p, this.f_tp].join(`,`);
 
-      this.$router.push({ query: { ingredients, filters } });
+      this.$router.push({
+        query: {
+          ingredients,
+          group: this.group,
+          favorites_min: this.favorites_min,
+          favorites_max: this.favorites_max,
+          time_min: this.time_min,
+          time_max: this.time_max,
+          portions_min: this.portions_min,
+          portions_max: this.portions_max,
+        },
+      });
       this.show = 0;
+      this.show = 0;
+      this.group = null;
+      this.favorites_min = null;
+      this.favorites_max = null;
+      this.time_min = null;
+      this.time_max = null;
+      this.portions_min = null;
+      this.portions_max = null;
     },
     clickFilters() {
       if (this.show === 0) {
@@ -266,17 +294,23 @@ export default {
         this.show = 0;
       }
     },
-    selectA(e) {
-      this.f_a = e;
-    },
     selectTR(e) {
-      this.f_tr = e;
+      this.group = e;
     },
-    selectP(e) {
-      this.f_p = e;
+    selectA(e) {
+      this.favorites_min = e;
     },
-    selectTP(e) {
-      this.f_tp = e;
+    selectTP_min(e) {
+      this.time_min = e;
+    },
+    selectTP_max(e) {
+      this.time_max = e;
+    },
+    selectP_min(e) {
+      this.portions_min = e;
+    },
+    selectP_max(e) {
+      this.portions_max = e;
     },
   },
 };
