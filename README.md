@@ -121,8 +121,8 @@ Histórias: 6, 7 e 13.
      - [ ] 43 Teste dos IDs das respostas (Luiz)
    <br>
 *  13  Como desenvolvedor, quero entender os feedbacks recebidos.
-     - [ ] 44 Criar tela de dashboard (Rafael)
-     - [ ] 45 Criar rota para a tela de dashboard (Rafael)
+     - [X] 44 Criar tela de dashboard (Rafael)
+     - [X] 45 Criar rota para a tela de dashboard (Rafael)
      - [X] 46 Criar componente com gráfico para visualizar qualidade das pesquisas (Rafael)
      - [ ] 47 Definir e criar funções para calcular estatísticas de feedback (Luiz)
      - [ ] 48 Criar Mapper para estatísticas serem recebidas pelo framework de gráficos do front (Luiz)
