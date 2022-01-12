@@ -120,7 +120,7 @@ Histórias: 6, 7 e 13.
      - [ ] 42 Retornar ID da pesquisa junto da resposta (Luiz)
      - [ ] 43 Teste dos IDs das respostas (Luiz)
    <br>
-*  13  Como desenvolvedor, quero entender os feedbacks recebidos.
+* 13  Como desenvolvedor, quero entender os feedbacks recebidos.
      - [ ] 44 Criar tela de dashboard (Rafael)
      - [ ] 45 Criar rota para a tela de dashboard (Rafael)
      - [ ] 46 Criar componente com gráfico para visualizar qualidade das pesquisas (Rafael)
