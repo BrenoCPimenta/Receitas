@@ -29,7 +29,7 @@ class ViewTestCase(TestCase):
 
     def test_api_recipes_list_wrong_param(self):
         """Test the api has handle wrong parameters capability."""
-        url = '/recipes/'
+        url = '/recipes/search/'
         param = {'wrong': 'even more wrong'}
         self.assertEqual(
             self.set_response(url, param).status_code,
