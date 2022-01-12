@@ -116,8 +116,6 @@ Histórias: 6, 7 e 13.
      - [x] 33 Adicionar filtro por tipo de receita (Pedro)
      - [x] 34 Adicionar filtro por porções (Pedro)
      - [x] 35 Adicionar filtro por tempo de preparo (Pedro)
-
-<br>
 7. Como usuário, quero enviar feedback a respeito dos resultados das buscas.
      - [ ] 36 Criar conexão com o Postgre (Breno)
      - [X] 37 Criar DB Postgre (Breno)
@@ -125,8 +123,6 @@ Histórias: 6, 7 e 13.
      - [ ] 39 Criar endpoint para receber e armazenar feedback (Luiz)
      - [x] 40 Criar UI para registrar feedback (Rafael)
      - [X] 41 Criar serviço para enviar feedback (Rafael)   
-
-<br>
 13  Como desenvolvedor, quero entender os feedbacks recebidos.
      - [X] 44 Criar tela de dashboard (Rafael)
      - [X] 45 Criar rota para a tela de dashboard (Rafael)
