@@ -57,11 +57,13 @@ class RecipesViewSet(viewsets.ViewSet):
                 if 'page' in params:
                     result = queries.search_by_ingredients(
                         ingredients=params['ingredients'].split(','),
+                        filters=FilterUtils.generate_filters(params),
                         page=int(params['page'])
                     )
                 else:
                     result = queries.search_by_ingredients(
-                        ingredients=params['ingredients'].split(',')
+                        ingredients=params['ingredients'].split(','),
+                        filters=FilterUtils.generate_filters(params)
                     )
 
             else:
