@@ -88,6 +88,10 @@ Histórias: 0, 1, 2, 3 e 4.
 ### A repensar:
 - 4 Conteinerizar todo o ambiente (Breno)
 - 21 Criar models e etc para elastic
+- 47 Definir e criar funções para calcular estatísticas de feedback (Luiz)
+- 48 Criar Mapper para estatísticas serem recebidas pelo framework de gráficos do front (Luiz)
+- 49 Criar endpoints para obter as estatísticas de feedback mapeadas (Luiz)
+- 50 Criar testes unitários para as funções de estatísticas dos feedbacks (Luiz)
 
 ### Backlog Sprint 2
 
@@ -124,9 +128,5 @@ Histórias: 6, 7 e 13.
      - [X] 44 Criar tela de dashboard (Rafael)
      - [X] 45 Criar rota para a tela de dashboard (Rafael)
      - [X] 46 Criar componente com gráfico para visualizar qualidade das pesquisas (Rafael)
-     - [ ] 47 Definir e criar funções para calcular estatísticas de feedback (Luiz)
-     - [ ] 48 Criar Mapper para estatísticas serem recebidas pelo framework de gráficos do front (Luiz)
-     - [ ] 49 Criar endpoints para obter as estatísticas de feedback mapeadas (Luiz)
-     - [ ] 50 Criar testes unitários para as funções de estatísticas dos feedbacks (Luiz)
 
 
