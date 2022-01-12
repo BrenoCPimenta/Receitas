@@ -8,6 +8,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 
 from api.elastic_queries import ElasticSearchQueries
+from api.filters_utils import FilterUtils
 
 
 class RecipesViewSet(viewsets.ViewSet):
@@ -38,21 +39,31 @@ class RecipesViewSet(viewsets.ViewSet):
             params = self.request.query_params.dict()
             # Instanciate and exec elasticsearch:
             queries = ElasticSearchQueries()
+            
             if 'name' in params:
                 if 'page' in params:
                     result = queries.search_by_name(
-                                name=params['name'],
-                                page=int(params['page']))
+                        name = params['name'],
+                        filters = FilterUtils.generate_filters(params),
+                        page = int(params['page'])
+                    )
                 else:
-                    result = queries.search_by_name(name=params['name'])
+                    result = queries.search_by_name(
+                        name=params['name'],
+                        filters=FilterUtils.generate_filters(params)
+                    )
+                
             elif 'ingredients' in params:
                 if 'page' in params:
                     result = queries.search_by_ingredients(
-                                ingredients=params['ingredients'].split(','),
-                                page=int(params['page']))
+                        ingredients=params['ingredients'].split(','),
+                        page=int(params['page'])
+                    )
                 else:
                     result = queries.search_by_ingredients(
-                                ingredients=params['ingredients'].split(','))
+                        ingredients=params['ingredients'].split(',')
+                    )
+
             else:
                 return Response(
                         {'ValidationError': 'Wrong parameters passed'},

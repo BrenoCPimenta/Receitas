@@ -1,4 +1,5 @@
-""" Definition of elasticsearch class.
+""" 
+Definition of elasticsearch class.
 
 Connects to elasticsearch and performs search
 by ingredients and recipe names.
@@ -11,6 +12,7 @@ Typical usage example:
 """
 import elasticsearch as es
 
+from api.filters_utils import FilterUtils
 
 def parse_result(result):
     """
@@ -62,30 +64,23 @@ class ElasticSearchQueries:
         """
         self.returning_fields = fields
 
-    def search_by_name(self, name, size=12, page=1, return_raw=False):
+    def search_by_name(self, name, filters = None, size=12, page=1, return_raw=False):
         """
         Search for recipes by name.
             name: string.
+            filters: dictionary with the following structure:
+                {
+                    "<range_fild_name>": (start, end),
+                    "<multiple_options_field_name>": [option1, option2, ...],
+                    ...
+                }
             size: int, default 10
                 Number of results to return.
             page: int, default 1.
             return_raw: bool, default False
                 If true, returns the raw result from elasticsearch.
         """
-        query = {
-            "query": {
-                "multi_match": {
-                    "query": name,
-                    "fields": [
-                        "recipe_title^2",
-                        "ingredients^2",
-                        "raw_text"
-                        ],
-                    "type": "most_fields",
-                    "fuzziness": 1
-                }
-            }
-        }
+        query = FilterUtils.get_query_by_name_filtred(name, filters)
         response = self.es.search(
             index=self.index,
             body=query,
