@@ -49,7 +49,8 @@
       <RouterView/>
 
       <div :class="$style.listing">
-        <ProductListingContainer/>
+        <SearchRating/>
+        <ProductListingContainer :key="componentKey"/>
       </div>
     </div>
   </div>
@@ -57,15 +58,24 @@
 
 <script>
 import ProductListingContainer from '../components/ProductListingContainer.vue';
+import SearchRating from '../components/SearchRating.vue';
 
 export default {
   name: `PageProducts`,
   components: {
     ProductListingContainer,
+    SearchRating,
   },
   data: () => ({
     currentTab: null,
+    componentKey: 0,
   }),
+  watch: {
+    '$store.state.info': function () {
+      // console.log(this.$store.state.info);
+      this.componentKey += 1;
+    },
+  },
   created() {
     this.tabs = [
       {
@@ -75,7 +85,7 @@ export default {
       },
       {
         text: `Busca por Ingredientes`,
-        route: `/ingredientes?text=novo`,
+        route: `/ingredients/`,
         iconName: `mdi-format-list-checks`,
       },
     ];

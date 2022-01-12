@@ -56,12 +56,12 @@
               height="60"
               width="80"
             >
-              <v-img :src="item.img"/>
+              <v-img :src="item.images[0]"/>
             </v-list-item-avatar>
 
             <v-list-item-content>
-              <v-list-item-title v-html="item.name"/>
-              <v-list-item-subtitle v-html="item.name"/>
+              <v-list-item-title v-html="item.recipe_title"/>
+              <v-list-item-subtitle v-html="item.group"/>
             </v-list-item-content>
 
             <v-list-item-action>

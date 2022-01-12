@@ -1,5 +1,3 @@
 branch=$(git symbolic-ref HEAD)
-if [[ $branch =~ "front" ]]; then
-  cd frontend
-  npm run pre-commit
-fi
+cd frontend
+npm run pre-commit
