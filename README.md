@@ -110,7 +110,6 @@ Histórias: 6, 7 e 13.
      - [x] 33 Adicionar filtro por tipo de receita (Pedro)
      - [x] 34 Adicionar filtro por porções (Pedro)
      - [x] 35 Adicionar filtro por tempo de preparo (Pedro)
->>>>>>> 2608bf3f340cbb1e35a7dfd24530bd858be0e6bf
 7. Como usuário, quero enviar feedback a respeito dos resultados das buscas.
      - [ ] 36 Criar conexão com o Postgre (Breno)
      - [ ] 37 Criar DB Postgre (Breno)
