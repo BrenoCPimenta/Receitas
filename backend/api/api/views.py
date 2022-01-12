@@ -25,7 +25,10 @@ class RecipesViewSet(viewsets.ViewSet):
         Endpoints for search into elasticsearch
 
         Args:
-            request (request): data with request information
+            request (request): data with request information. Request 
+                    parameters: 'name', 'ingredients', 'size', 'page' and 
+                    'filters': 'group', 'time_min', 'time_max', 'portions_min', 
+                    'portions_max', 'favorites_min', 'favorites_max'.
 
         Returns:
             Response (drf.response): 200: with elasticsearch result
