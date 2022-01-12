@@ -33,14 +33,14 @@
     <UiGrid data-qa="product grid">
       <UiGridItem
         v-for="product in products"
-        :key="product.name"
+        :key="product.recipe_title"
         :width="[`12/12`, `4/12@m`]"
         data-qa="product"
       >
         <ProductCard
-          :img="product.img"
-          :name="product.name"
-          :url="product.url"
+          :img="product.images[0]"
+          :title="product.recipe_title"
+          :url="product.link"
         />
       </UiGridItem>
     </UiGrid>

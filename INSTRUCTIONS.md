@@ -19,6 +19,13 @@
     ```sh
     python3 manage.py runserver
     ```
+* **Testing Django API**:
+
+    Move to _backend/api_ folder and execute:
+    ```sh
+    python3 manage.py test
+    ```
+
 * **Using Backend Linter:**
     * Set packages to be analysed or ignored on file _backend/api/env.py_
     * Executing linter:

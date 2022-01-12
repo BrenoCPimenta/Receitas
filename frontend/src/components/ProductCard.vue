@@ -21,10 +21,10 @@
             v-bind="attrs"
             v-on="on"
           >
-            {{ name }}
+            {{ title }}
           </p>
         </template>
-        <span>{{ name }}</span>
+        <span>{{ title }}</span>
       </v-tooltip>
     </v-card-title>
 
@@ -56,7 +56,7 @@ export default {
       required: true,
       type: String,
     },
-    name: {
+    title: {
       required: true,
       type: String,
     },
