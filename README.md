@@ -123,6 +123,7 @@ Histórias: 6, 7 e 13.
      - [ ] 39 Criar endpoint para receber e armazenar feedback (Luiz)
      - [x] 40 Criar UI para registrar feedback (Rafael)
      - [X] 41 Criar serviço para enviar feedback (Rafael)   
+     <br>
 13. Como desenvolvedor, quero entender os feedbacks recebidos.
      - [X] 44 Criar tela de dashboard (Rafael)
      - [X] 45 Criar rota para a tela de dashboard (Rafael)
