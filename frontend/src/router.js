@@ -10,11 +10,11 @@ export default new Router({
     {
       path: `/`,
       alias: `/home`,
-      name: `home`,
       component: () => import(`./pages/PageHome.vue`),
       children: [
         {
           path: `/`,
+          name: `home`,
           component: () => import(`./components/TextFilter.vue`),
         },
         {
@@ -22,6 +22,14 @@ export default new Router({
           component: () => import(`./components/IngredientFilter.vue`),
         },
       ],
+      meta: {
+        title: `Receitinhas`,
+      },
+    },
+    {
+      path: `/dashboard`,
+      name: `Dashboard`,
+      component: () => import(`./pages/PageDashboard.vue`),
       meta: {
         title: `Receitinhas`,
       },
