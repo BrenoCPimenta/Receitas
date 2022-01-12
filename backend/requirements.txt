@@ -1,4 +1,4 @@
--e git+ssh://git@github.com/BrenoCPimenta/Receitas.git@a141cd8913f4bd9d1e9cd0ac473a0bba5c488bf9#egg=api&subdirectory=backend/api
+-e git+ssh://git@github.com/BrenoCPimenta/Receitas.git@75d0132b800862510cf9bea63c0e6108672ce53a#egg=api&subdirectory=backend/api
 appdirs==1.4.4
 apturl==0.5.2
 argon2-cffi==20.1.0
@@ -32,6 +32,7 @@ distro-info===0.23ubuntu1
 Django==3.2.9
 djangorestframework==3.12.4
 duplicity==0.8.12.0
+ElasticMock==1.8.1
 elasticsearch==7.15.2
 entrypoints==0.3
 et-xmlfile==1.0.1
