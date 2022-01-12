@@ -92,6 +92,8 @@ Histórias: 0, 1, 2, 3 e 4.
 - 48 Criar Mapper para estatísticas serem recebidas pelo framework de gráficos do front 
 - 49 Criar endpoints para obter as estatísticas de feedback mapeadas 
 - 50 Criar testes unitários para as funções de estatísticas dos feedbacks 
+- 42 Retornar ID da pesquisa junto da resposta
+- 43 Teste dos IDs das respostas
 
 ### Backlog Sprint 2
 
@@ -114,15 +116,14 @@ Histórias: 6, 7 e 13.
      - [x] 33 Adicionar filtro por tipo de receita (Pedro)
      - [x] 34 Adicionar filtro por porções (Pedro)
      - [x] 35 Adicionar filtro por tempo de preparo (Pedro)
+<br>
 7. Como usuário, quero enviar feedback a respeito dos resultados das buscas.
      - [ ] 36 Criar conexão com o Postgre (Breno)
      - [X] 37 Criar DB Postgre (Breno)
      - [X] 38 Criar Tabela feedback no banco Postgre (Breno)
      - [ ] 39 Criar endpoint para receber e armazenar feedback (Luiz)
      - [x] 40 Criar UI para registrar feedback (Rafael)
-     - [ ] 41 Criar serviço para enviar feedback (Rafael)
-     - [ ] 42 Retornar ID da pesquisa junto da resposta (Luiz)
-     - [ ] 43 Teste dos IDs das respostas (Luiz)
+     - [X] 41 Criar serviço para enviar feedback (Rafael)   
    <br>
 *  13  Como desenvolvedor, quero entender os feedbacks recebidos.
      - [X] 44 Criar tela de dashboard (Rafael)
