@@ -10,7 +10,9 @@
 ```pip install -r backend/requirements.txt```
 
 4. Run kibana and elasticsearch (instructions in backend/database/elastic/README.md)
+
 <br>
+
 ### API Executions:
 * **Running Django API**:
     Move to _backend/api_ folder and execute:

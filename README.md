@@ -130,3 +130,4 @@ Histórias: 6, 7 e 13.
      - [X] 46 Criar componente com gráfico para visualizar qualidade das pesquisas (Rafael)
 
 
+
