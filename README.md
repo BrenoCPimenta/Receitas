@@ -42,12 +42,10 @@ E as branchs serão divididas entre Front e Back como são aplicações independ
 5. Como usuário, quero uma página inicial com receitas relevantes.
 6. Como usuário quero fazer buscas avançadas (com filtros, por tipos de receita, por avaliação, por porções, por tempo de preparo).
 7. Como usuário, quero enviar feedback a respeito dos resultados das buscas.
-8. Como usuário, quero criar uma conta.
-9. Como usuário, quero fazer login.
-10. Como usuário, quero salvar minhas receitas favoritas.
-11. Como usuário, quero resultados personalizados. (Extra)
-12. Como usuário, quero a opção de visualizar a aplicação em Dark Mode.
-13. Como desenvolvedor, quero entender os feedbacks recebidos.
+8. Como desenvolvedor, quero entender os feedbacks recebidos.
+9. Como usuário, quero criar uma conta.
+10. Como usuário, quero fazer login.
+
 
 ### Backlog Sprint 1
 
@@ -123,11 +121,36 @@ Histórias: 6, 7 e 13.
      - [x] 39 Criar endpoint para receber e armazenar feedback (Luiz)
      - [x] 40 Criar UI para registrar feedback (Rafael)
      - [X] 41 Criar serviço para enviar feedback (Rafael)   
-   <br>
-* 13   Como desenvolvedor, quero entender os feedbacks recebidos.
+8. Como desenvolvedor, quero entender os feedbacks recebidos.
      - [X] 44 Criar tela de dashboard (Rafael)
      - [X] 45 Criar rota para a tela de dashboard (Rafael)
      - [X] 46 Criar componente com gráfico para visualizar qualidade das pesquisas (Rafael)
 
+### Backlog Sprint 3
+
+Histórias: 9 e 10.
+
+9. Como usuário, quero criar uma conta.
+      - [ ] 47 Criar a tela de cadastro. (Pedro)
+      - [ ] 48 Criar o formulário de cadastro. (username, password, email) (Pedro)
+      - [ ] 49 Criar regras para validação dos campos no frontend. (Pedro)
+      - [ ] 50 Cria a tabela usuários no banco. (Breno)
+      - [ ] 51 Criar endpoint para realizar o cadastro de um novo usuário. (Luiz)
+      - [ ] 52 Criar regras para validação dos campos no backend. (Luiz)
+      - [ ] 53 Criar consulta para cadastro de cliente.(Breno)
+      - [ ] 54 Configurar ambiente de Integração Contínua utilizando Jenkins. (Rafael)
+      - [ ] 55 Configurar pipeline de Integração Contínua para Pull Requests. (Rafael)
+      - [ ] 56 Configurar Cypress para testes end-to-end. (Rafael)
+      - [ ] 57 Teste de interface de usuário: validação dos campos de cadastro. (Rafael)
+10. Como usuário, quero fazer login.
+      - [ ] 58 Criar a tela de login. (Pedro)
+      - [ ] 59 Criar o formulário de login. (Pedro)
+      - [ ] 60 Criar endpoint para realizar o login. (Luiz)
+      - [ ] 61 Criar consulta para login de usuário. (Breno)
+      - [ ] 62 Teste de integração do endpoint de login. (Luiz)
+      - [ ] 63 Teste de integração com PostGreSQL. (Breno)
+      - [ ] 64 Teste de integração com ElasticSearch. (Luiz)
+      - [ ] 65 Teste de interface de usuário: testar login com sucesso. (Rafael)
+      - [ ] 66 Teste de interface de usuário: teste de busca simples. (Rafael)
 
 
