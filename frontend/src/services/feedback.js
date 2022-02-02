@@ -6,7 +6,7 @@ const parsedFeedbacks = feedbacks.map(el => ({
 }));
 
 const mapFeedback = (selectedFeedbacks) => {
-  const result = [0, 0, 0, 0, 0];
+  let result = [0, 0, 0, 0, 0];
   selectedFeedbacks.forEach((el) => {
     result[el.feedback - 1] += 1;
   });
