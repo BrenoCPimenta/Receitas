@@ -3,17 +3,16 @@
     <main :class="$style.main">
       <slot/>
     </main>
-    <TheFooter/>
   </div>
 </template>
 
 <script>
-import TheFooter from '../components/TheFooter.vue';
+// import TheFooter from '../components/TheFooter.vue';
 
 export default {
   name: `LayoutDefault`,
   components: {
-    TheFooter,
+    // TheFooter,
   },
 };
 </script>
