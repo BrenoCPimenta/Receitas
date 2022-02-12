@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  receitas-backend:
+    build: .
+    ports:
+      - "8000:8000"
+      - "9200:9200"
+      - "5601:5601"
+    tty: true
