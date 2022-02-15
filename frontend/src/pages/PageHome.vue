@@ -15,6 +15,59 @@
       </h1>
     </div> -->
 
+    <div>
+      <v-app-bar
+        v-if="username"
+        color="blue-grey lighten-5"
+        dense
+        dark
+        flat
+        class="mycolor--text"
+      >
+        <v-app-bar-nav-icon color="mycolor"/>
+        <v-avatar
+          size="38"
+          class="ml-3 mr-2"
+        >
+          <img
+            src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blanko&eyeType=Default&eyebrowType=DefaultNatural%22"
+          >
+        </v-avatar>
+
+        <v-toolbar-title>{{ username || 'Username' }}</v-toolbar-title>
+
+        <v-spacer/>
+        Logout
+        <v-btn
+          icon
+          color="mycolor"
+          class="ml-1"
+          @click="clickLogout"
+        >
+          <v-icon>mdi-logout</v-icon>
+        </v-btn>
+      </v-app-bar>
+
+      <v-app-bar
+        v-else
+        color="blue-grey lighten-5"
+        dense
+        dark
+        flat
+        class="mycolor--text"
+      >
+        <v-btn
+          icon
+          color="mycolor"
+          class="mr-1"
+          @click="clickLogout"
+        >
+          <v-icon>mdi-login</v-icon>
+        </v-btn>
+        Login
+      </v-app-bar>
+    </div>
+
     <div :class="$style.intro">
       <v-container>
         <v-row
@@ -66,10 +119,13 @@ export default {
     ProductListingContainer,
     SearchRating,
   },
-  data: () => ({
-    currentTab: null,
-    componentKey: 0,
-  }),
+  data() {
+    return {
+      currentTab: null,
+      componentKey: 0,
+      username: this.$route.params.username,
+    };
+  },
   watch: {
     '$store.state.info': function () {
       // console.log(this.$store.state.info);
@@ -80,7 +136,7 @@ export default {
     this.tabs = [
       {
         text: `Busca Textual`,
-        route: `/`,
+        route: `/home/`,
         iconName: `mdi-magnify`,
       },
       {
@@ -89,6 +145,12 @@ export default {
         iconName: `mdi-format-list-checks`,
       },
     ];
+  },
+  methods: {
+    clickLogout() {
+      this.$router.replace({ name: `login` });
+      console.log(this.$router);
+    },
   },
 };
 </script>

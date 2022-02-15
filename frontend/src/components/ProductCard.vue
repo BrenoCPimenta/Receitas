@@ -82,8 +82,4 @@ export default {
 
 <style>
 
-.v-card {
-  font-family: 'Ubuntu Condensed';
-}
-
 </style>

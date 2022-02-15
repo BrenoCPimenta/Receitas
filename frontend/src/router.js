@@ -8,12 +8,12 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: `/`,
-      alias: `/home`,
+      path: `/home/`,
+      // alias: `/home`,
       component: () => import(`./pages/PageHome.vue`),
       children: [
         {
-          path: `/`,
+          path: `/home/`,
           name: `home`,
           component: () => import(`./components/TextFilter.vue`),
         },
@@ -25,6 +25,12 @@ export default new Router({
       meta: {
         title: `Receitinhas`,
       },
+    },
+    {
+      path: `/`,
+      alias: `/login`,
+      name: `login`,
+      component: () => import(`./components/Login.vue`),
     },
     {
       path: `/dashboard`,
