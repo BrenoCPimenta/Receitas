@@ -16,7 +16,6 @@
     console.log("Pushing to gh-pages...");
     await execa("git", ["push", "origin", "HEAD:gh-pages", "--force"]);
     await execa("git", ["checkout", "-f", branch]);
-    await execa("git", ["branch", "-D", "gh-pages"]);
     console.log("Successfully deployed.");
   } catch (e) {
     // eslint-disable-next-line no-console

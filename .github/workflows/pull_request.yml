@@ -27,6 +27,10 @@ jobs:
       working-directory: ./backend/api
       run: |
         python manage.py test
+    - name: Run Linter
+      working-directory: ./backend/api/linter
+      run: |
+        python lint_script.py
   
   frontend-quality:
     needs: [backend-quality]
