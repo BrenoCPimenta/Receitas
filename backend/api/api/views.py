@@ -37,9 +37,9 @@ class RecipesViewSet(viewsets.ViewSet):
         Endpoints for search into elasticsearch
 
         Args:
-            request (request): data with request information. Request 
-                    parameters: 'name', 'ingredients', 'size', 'page' and 
-                    'filters': 'group', 'time_min', 'time_max', 'portions_min', 
+            request (request): data with request information. Request
+                    parameters: 'name', 'ingredients', 'size', 'page' and
+                    'filters': 'group', 'time_min', 'time_max', 'portions_min',
                     'portions_max', 'favorites_min', 'favorites_max'.
 
         Returns:
@@ -54,7 +54,7 @@ class RecipesViewSet(viewsets.ViewSet):
             params = self.request.query_params.dict()
             # Instanciate and exec elasticsearch:
             queries = ElasticSearchQueries()
-            
+
             if 'name' in params:
                 if 'page' in params:
                     result = queries.search_by_name(
@@ -67,7 +67,7 @@ class RecipesViewSet(viewsets.ViewSet):
                         name=params['name'],
                         filters=FilterUtils.generate_filters(params)
                     )
-                
+
             elif 'ingredients' in params:
                 if 'page' in params:
                     result = queries.search_by_ingredients(
@@ -94,17 +94,12 @@ class RecipesViewSet(viewsets.ViewSet):
 
     @action(detail=False, methods=['post'])
     def login(self, request):
-        """ 
+        """
         Login in website using authentication class.
         """
         try:
             # Read url parameters:
             params = request.POST.dict()
-
-            if not validate_password(params['password']):
-                return Response(
-                    {'ValidationError': 'Password must be at least 5 characters'},
-                    status=status.HTTP_400_BAD_REQUEST)
 
             # print(params)
             # Instanciate and exec elasticsearch:
@@ -122,13 +117,19 @@ class RecipesViewSet(viewsets.ViewSet):
 
     @action(detail=False, methods=['post'])
     def register(self, request):
-        """ 
+        """
         Register in website using User.
         """
         try:
             # Read url parameters:
             params = self.request.POST.dict()
             # print(params)
+
+            if not validate_password(params['password']):
+                return Response(
+                    {'ValidationError': 'Password must be at least 5 characters'},
+                    status=status.HTTP_400_BAD_REQUEST)
+
             # Instanciate and exec elasticsearch:
             user = User(
                 username=params['username'],
