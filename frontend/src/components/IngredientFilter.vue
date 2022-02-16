@@ -20,6 +20,7 @@
             :hide-no-data="!search"
             :search-input.sync="search"
             :items="items"
+            id="ingredient_search_input"
             hide-selected
             label="Quais ingredientes você quer usar?"
             multiple
@@ -116,6 +117,7 @@
           <v-btn
             color="mycolor"
             class="mx-2 white--text"
+            id="search_ingredient_button"
             depressed
             rounded
             fab

@@ -62,6 +62,7 @@
             {{ errorMessage }}
           </div>
           <v-btn
+            id="submit_form_login"
             type="submit"
             class="white--text mt-4"
             color="mycolor"
@@ -70,6 +71,7 @@
             {{ isRegister ? stateObj.register.btn : stateObj.login.btn }}
           </v-btn>
           <div
+            id="login_register_message"
             class="grey--text mt-4"
             @click="isRegister = !isRegister;"
           >

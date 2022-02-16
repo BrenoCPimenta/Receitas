@@ -5,13 +5,19 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
-    "pre-commit": "lint-staged"
+    "e2e": "vue-cli-service test:e2e",
+    "test:visual": "npx cypress run --spec \"tests\\e2e\\specs\\**\\*.spec.js\"",
+    "test:visual:snapshots": "npx cypress run --env updateSnapshots=true",
+    "cy:open": "cypress open",
+    "pre-commit": "lint-staged",
+    "test:visual:docker": "docker run -it -e CYPRESS_updateSnapshots=$CYPRESS_updateSnapshots CYPRESS_baseUrl=$CYPRES_baseUrl --ipc=host -v ${PWD}:/e2e -w /e2e cypress/included:4.11.0"
   },
   "dependencies": {
     "@avalanche/eslint-config": "^4.0.0",
-    "chart.js": "^2.7.3",
     "axios": "^0.24.0",
+    "chart.js": "^2.7.3",
     "classnames": "^2.3.1",
     "core-js": "^3.6.5",
     "eslint-plugin-cypress": "^2.12.1",
@@ -29,10 +35,13 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.3",
     "@babel/eslint-plugin": "^7.14.5",
+    "@types/cypress-image-snapshot": "^3.1.6",
     "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-e2e-cypress": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
+    "cypress-image-snapshot": "^4.0.1",
     "eslint": "^7.5.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-vue": "^5.2.1",

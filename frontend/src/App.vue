@@ -19,10 +19,17 @@ export default {
     $route(to) {
       document.title = to.meta.title || `Receitinhas`;
 
-      const query = to.fullPath.substring(to.fullPath.lastIndexOf(`/`) + 1);
-      if (query) {
+      const query = to.fullPath.substring(to.fullPath.indexOf(`?`) + 1);
+      const params = new URLSearchParams(query);
+      [...params.entries()].forEach(([key, value]) => {
+        if (!value) {
+          params.delete(key);
+        }
+      });
+      const cleaned = String(params);
+      if (cleaned) {
         axios
-          .get(`http://localhost:8000/recipes/search/${query}`)
+          .get(`${process.env.VUE_APP_API_URL}/recipes/search/?${cleaned}`)
           .then(response => (this.$store.dispatch(`setInfo`, response.data)))
           .catch(error => console.log(error));
       }

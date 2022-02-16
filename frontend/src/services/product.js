@@ -85,14 +85,14 @@ export function get({
   return new Promise((resolve) => {
     setTimeout(() => {
       let result = db;
-      let filteredResultCount = result.length;
+      let filteredResultCount = result ? result.length : 0;
 
-      if (filter.category) {
+      if (result && filter.category) {
         result = result.filter(x => x.categories.includes(filter.category));
         filteredResultCount = result.length;
       }
 
-      if (limit) {
+      if (result && limit) {
         const start = (pageInt - 1) * limit;
         const end = start + limit;
         result = result.slice(start, end);

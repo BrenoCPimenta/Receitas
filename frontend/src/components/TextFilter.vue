@@ -16,6 +16,7 @@
         >
           <v-text-field
             v-model="name"
+            id="search_input"
             light
             clearable
             outlined
@@ -32,6 +33,7 @@
           md="1"
         >
           <v-btn
+            id="search_button"
             color="mycolor"
             class="mx-2 white--text"
             depressed
