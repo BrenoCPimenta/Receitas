@@ -15,6 +15,7 @@
           md="11"
         >
           <v-combobox
+            id="ingredient_search_input"
             v-model="model"
             :filter="filter"
             :hide-no-data="!search"
@@ -114,6 +115,7 @@
           md="1"
         >
           <v-btn
+            id="search_ingredient_button"
             color="mycolor"
             class="mx-2 white--text"
             depressed

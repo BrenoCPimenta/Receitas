@@ -91,6 +91,7 @@
         <v-tabs-slider/>
         <v-tab
           v-for="tab in tabs"
+          :id="'tab_' + tab.id"
           :key="tab.route"
           :to="tab.route"
         >
@@ -138,11 +139,13 @@ export default {
         text: `Busca Textual`,
         route: `/home/`,
         iconName: `mdi-magnify`,
+        id: `busca_textual`,
       },
       {
         text: `Busca por Ingredientes`,
         route: `/ingredients/`,
         iconName: `mdi-format-list-checks`,
+        id: `busca_ingrediente`,
       },
     ];
   },

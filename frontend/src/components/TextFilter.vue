@@ -15,6 +15,7 @@
           md="11"
         >
           <v-text-field
+            id="search_input"
             v-model="name"
             light
             clearable
@@ -32,6 +33,7 @@
           md="1"
         >
           <v-btn
+            id="search_button"
             color="mycolor"
             class="mx-2 white--text"
             depressed
