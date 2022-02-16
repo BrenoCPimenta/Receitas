@@ -74,3 +74,12 @@ jobs:
     - name: Deploy frontend
       working-directory: ./frontend
       run: npm run deploy
+
+  visual-regression-test:
+    runs-on: ubuntu-latest
+    container: cypress/included:8.0.0
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run visual rests
+        working-directory: ./frontend
+        run: cypress run --config baseUrl=https://brenocpimenta.github.io/Receitas/
