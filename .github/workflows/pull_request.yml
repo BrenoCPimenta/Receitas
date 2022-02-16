@@ -91,8 +91,7 @@ jobs:
         cache-dependency-path: frontend/package-lock.json
     - name: Update dependencies
       working-directory: ./frontend
-      run: npm ci
-    - uses: actions/checkout@v2
+      run: npm i
     - name: Run visual rests
       working-directory: ./frontend
       run: cypress run --config baseUrl=https://brenocpimenta.github.io/Receitas/
