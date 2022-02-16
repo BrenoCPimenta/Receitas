@@ -1,6 +1,6 @@
 describe(`Register form test`, () => {
   it(`Validate all required fields`, () => {
-    cy.visit(`/login`);
+    cy.visit(`/`);
     cy.get(`#login_register_message`).click();
     cy.get(`#submit_form_login`).click();
     cy.wait(10);

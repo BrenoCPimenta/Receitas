@@ -1,6 +1,6 @@
 describe(`Login form test`, () => {
   it(`Validate login required fields`, () => {
-    cy.visit(`/login`);
+    cy.visit(`/`);
     cy.get(`#submit_form_login`).click();
     cy.wait(10);
     cy.matchImageSnapshot(`Required field: username`);

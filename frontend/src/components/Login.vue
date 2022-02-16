@@ -84,6 +84,7 @@
 
     <div class="text-center">
       <v-btn
+        id="anonymous_login_button"
         color="mycolor"
         dark
         outlined

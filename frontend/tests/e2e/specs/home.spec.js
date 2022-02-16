@@ -1,6 +1,8 @@
 describe(`Homepage test`, () => {
   it(`Check initial homepage and text search`, () => {
-    cy.visit(`/home`);
+    cy.visit(`/`);
+    cy.get('#anonymous_login_button').click();
+    cy.wait(10);
     cy.matchImageSnapshot(`Homepage: initial`);
 
     cy.get(`#search_input`).type(`morango`);
@@ -10,7 +12,9 @@ describe(`Homepage test`, () => {
   });
 
   it.only(`Check ingredient search`, () => {
-    cy.visit(`/home`);
+    cy.visit(`/`);
+    cy.get('#anonymous_login_button').click();
+    cy.wait(10);
     cy.get(`#tab_busca_ingrediente`).click();
     cy.wait(10);
     cy.get(`.v-select__slot`).type(`ovo`).type(`{enter}`);
