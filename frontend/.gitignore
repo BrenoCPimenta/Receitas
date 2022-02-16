@@ -30,3 +30,5 @@ Thumbs.db
 node_modules
 /test/videos/
 /test/screenshots/
+/tests/e2e/screenshots
+/tests/e2e/snapshots/*/__diff_output__

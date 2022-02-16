@@ -10,6 +10,7 @@
     "lint:no-fix": "vue-cli-service lint --no-fix",
     "e2e": "vue-cli-service test:e2e",
     "test:visual": "npx cypress run --spec \"tests\\e2e\\specs\\**\\*.spec.js\"",
+    "test:visual:dev": "npx cypress run --spec \"tests\\e2e\\specs\\**\\*.spec.js\"  --config baseUrl=https://brenocpimenta.github.io/Receitas/",
     "test:visual:snapshots": "npx cypress run --env updateSnapshots=true",
     "cy:open": "cypress open",
     "pre-commit": "lint-staged",
