@@ -53,7 +53,7 @@ jobs:
       working-directory: ./frontend
       run: npm run lint:no-fix
   
-  frontend-deploy:
+  deploy-application:
     needs: [frontend-quality]
     runs-on: ubuntu-latest
     strategy:
@@ -80,7 +80,7 @@ jobs:
       run: npm run deploy
 
   visual-regression-test:
-    needs: [frontend-deploy]
+    needs: [deploy-application]
     runs-on: ubuntu-latest
     strategy:
       matrix:
