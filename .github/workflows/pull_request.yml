@@ -63,6 +63,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: frontend/package-lock.json
+    - run: git config --global user.email "actions@github.com"
+    - run: git config --global user.name "Github Actions"
     - name: Update dependencies
       working-directory: ./frontend
       run: npm i
