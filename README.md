@@ -138,7 +138,7 @@ Histórias: 9 e 10.
       - [X] 51 Criar endpoint para realizar o cadastro de um novo usuário. (Luiz)
       - [X] 52 Criar regras para validação dos campos no backend. (Luiz)
       - [X] 53 Criar consulta para cadastro de cliente.(Breno)
-      - [X] 54 Configurar ambiente de Integração Contínua utilizando Jenkins. (Rafael)
+      - [X] 54 Configurar ambiente de Integração Contínua utilizando GH actions. (Rafael)
       - [X] 55 Configurar pipeline de Integração Contínua para Pull Requests. (Rafael)
       - [X] 56 Configurar Cypress para testes end-to-end. (Rafael)
       - [X] 57 Teste de interface de usuário: validação dos campos de cadastro. (Rafael)
