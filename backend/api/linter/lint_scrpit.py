@@ -1,7 +1,5 @@
 from datetime import datetime
 from pylint import epylint as lint
-import os
-import env
 
 try:
     with open("log_linter.txt", "a+") as f:
@@ -10,17 +8,17 @@ try:
         entrance = f"[LOG] {today}\n"
 
         # Get packages that will be ANALIZED
-        packages = os.environ.get('LINTER_PACKAGES')
+        packages = './../api/ ./config/'
         if packages == '':
             raise ValueError("No packages specifed")
 
         # Get files to be ignored by the analyses
-        ignored_files = os.environ.get('LINTER_IGNORED_FILES')
-        if ignored_files != '':
-            ignored_files = '--ignore='+ignored_files
+        # ignored_files = os.environ.get('LINTER_IGNORED_FILES')
+        # if ignored_files != '':
+        #    ignored_files = '--ignore='+ignored_files
 
         # j=0 is to check availability of CPUs to run the analyze
-        command = f"{packages} -j 0 {ignored_files}"
+        command = f"{packages} -j 0"#{ignored_files}"
         (pylint_stdout, pylint_stderr) = lint.py_run(command, return_std=True)
 
         # Verifying for execution errors:
