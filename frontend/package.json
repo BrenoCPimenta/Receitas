@@ -7,6 +7,7 @@
     "build": "vue-cli-service build",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
+    "lint:no-fix": "vue-cli-service lint --no-fix",
     "e2e": "vue-cli-service test:e2e",
     "test:visual": "npx cypress run --spec \"tests\\e2e\\specs\\**\\*.spec.js\"",
     "test:visual:snapshots": "npx cypress run --env updateSnapshots=true",

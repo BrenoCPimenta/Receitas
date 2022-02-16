@@ -15,8 +15,8 @@
           md="11"
         >
           <v-text-field
-            v-model="name"
             id="search_input"
+            v-model="name"
             light
             clearable
             outlined

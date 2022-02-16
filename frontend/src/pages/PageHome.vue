@@ -139,13 +139,13 @@ export default {
         text: `Busca Textual`,
         route: `/home/`,
         iconName: `mdi-magnify`,
-        id: 'busca_textual'
+        id: `busca_textual`,
       },
       {
         text: `Busca por Ingredientes`,
         route: `/ingredients/`,
         iconName: `mdi-format-list-checks`,
-        id: 'busca_ingrediente'
+        id: `busca_ingrediente`,
       },
     ];
   },

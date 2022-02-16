@@ -15,12 +15,12 @@
           md="11"
         >
           <v-combobox
+            id="ingredient_search_input"
             v-model="model"
             :filter="filter"
             :hide-no-data="!search"
             :search-input.sync="search"
             :items="items"
-            id="ingredient_search_input"
             hide-selected
             label="Quais ingredientes você quer usar?"
             multiple
@@ -115,9 +115,9 @@
           md="1"
         >
           <v-btn
+            id="search_ingredient_button"
             color="mycolor"
             class="mx-2 white--text"
-            id="search_ingredient_button"
             depressed
             rounded
             fab
