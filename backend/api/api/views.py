@@ -6,10 +6,22 @@ from rest_framework import viewsets
 from rest_framework.decorators import action
 # from rest_framework.decorators import api_view
 from rest_framework.response import Response
+import json
 
 from api.elastic_queries import ElasticSearchQueries
 from api.filters_utils import FilterUtils
 
+from api.authenticate import Authenticate
+
+from api.models import User
+
+
+def validate_password(password):
+    """Validate password.
+    """
+    if len(password) < 5:
+        return False
+    return True
 
 class RecipesViewSet(viewsets.ViewSet):
     """
@@ -80,8 +92,54 @@ class RecipesViewSet(viewsets.ViewSet):
                     {'ValidationError': "Problem on search: " + str(e)},
                     status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+    @action(detail=False, methods=['post'])
+    def login(self, request):
+        """ 
+        Login in website using authentication class.
+        """
+        try:
+            # Read url parameters:
+            params = request.POST.dict()
 
-#  @api_view(['GET'])
-#  def test_route(request):
-#  Keeps a test route on the system
-#    return Response({"message": "You're on test ground"})
+            if not validate_password(params['password']):
+                return Response(
+                    {'ValidationError': 'Password must be at least 5 characters'},
+                    status=status.HTTP_400_BAD_REQUEST)
+
+            # print(params)
+            # Instanciate and exec elasticsearch:
+            auth = Authenticate(
+                username=params['username'],
+                password=params['password']
+            )
+            result = auth.authenticate()
+            return Response(result.name)
+
+        except Exception as e:
+            return Response(
+                    {'ValidationError': "Problem on login: " + str(e)},
+                    status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    @action(detail=False, methods=['post'])
+    def register(self, request):
+        """ 
+        Register in website using User.
+        """
+        try:
+            # Read url parameters:
+            params = self.request.POST.dict()
+            # print(params)
+            # Instanciate and exec elasticsearch:
+            user = User(
+                username=params['username'],
+                password=params['password'],
+                email=params['email'],
+                name=params['name']
+            )
+            user.save()
+            return Response(True)
+
+        except Exception as e:
+            return Response(
+                    {'ValidationError': "Problem on register: " + str(e)},
+                    status=status.HTTP_500_INTERNAL_SERVER_ERROR)
