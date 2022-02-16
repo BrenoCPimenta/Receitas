@@ -1,4 +1,4 @@
-import feedbacks from './feedbacksMock.json';
+import feedbacks from './feedbacksMock';
 
 const parsedFeedbacks = feedbacks.map(el => ({
   ...el,
