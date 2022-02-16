@@ -1,0 +1,77 @@
+name: Django CI
+
+on:
+  pull_request:
+    branches: [ main, 'story-**' ]
+
+jobs:
+  backend-quality:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.7, 3.8, 3.9]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install Dependencies
+      working-directory: ./backend
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Run Tests
+      working-directory: ./backend/api
+      run: |
+        python manage.py test
+  
+  frontend-quality:
+    needs: [backend-quality]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: frontend/package-lock.json
+    - name: Update dependencies
+      working-directory: ./frontend
+      run: npm ci
+    - name: Run frontend linter
+      working-directory: ./frontend
+      run: npm run lint:no-fix
+  
+  frontend-deploy:
+    needs: [frontend-quality]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: frontend/package-lock.json
+    - name: Update dependencies
+      working-directory: ./frontend
+      run: npm ci
+    - name: Build frontend
+      working-directory: ./frontend
+      run: npm run build
+    - uses: w9jds/firebase-action@master
+      working-directory: ./frontend
+      with:
+        args: deploy --only hosting
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FirebaseDeploy }}
