@@ -69,9 +69,6 @@ jobs:
     - name: Build frontend
       working-directory: ./frontend
       run: npm run build
-    - uses: w9jds/firebase-action@master
-      with:
-        args: deploy --only hosting
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FirebaseDeploy }}
-        PROJECT_PATH: ./frontend
+    - name: Deploy frontend
+      working-directory: ./frontend
+      run: npm run deploy

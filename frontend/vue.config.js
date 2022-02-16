@@ -24,5 +24,5 @@ module.exports = {
     `vuetify`,
   ],
 
-  publicPath: '/receitas/'
+  publicPath: `/Receitas/`,
 };
