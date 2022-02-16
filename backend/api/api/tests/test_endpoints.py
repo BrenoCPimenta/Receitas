@@ -18,6 +18,13 @@ class ViewTestCase(TestCase):
             url,
             param,
             format='json')
+    
+    def set_response_post(self, url, param):
+        """Create response from parameter"""
+        client = APIClient()
+        return client.post(
+            url,
+            param)
 
     def test_api_wrong_url(self):
         """Test the api has handle wrong url capability."""
@@ -34,3 +41,13 @@ class ViewTestCase(TestCase):
         self.assertEqual(
             self.set_response(url, param).status_code,
             status.HTTP_400_BAD_REQUEST)
+    
+    def test_register_and_login(self):
+        """Test the api has register and login capability."""
+        url = '/recipes/register/'
+        param = {'username': 'test', 'password': 'testpass', 'email': 'test@test.com', 'name': 'test'}
+        self.assertTrue(self.set_response_post(url, param))
+
+        url='/recipes/login/'
+        param = {'username': 'test', 'password': 'testpass'}
+        self.assertEqual(self.set_response_post(url, param).json(), 'test')
