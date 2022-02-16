@@ -3,6 +3,7 @@
   const { execa } = await import("execa");
   const fs = await import("fs");
   const { stdout: branch } = await execa("git", ["rev-parse", "--abbrev-ref", "HEAD"]);
+  console.log('Current branch: ', branch);
   try {
     await execa("git", ["checkout", "--orphan", "gh-pages"]);
     // eslint-disable-next-line no-console
